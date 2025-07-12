@@ -1,0 +1,26 @@
+// _typography.scss
+@import './variables';
+
+@mixin paragraph-style {
+  font-family: $font-text;
+  font-size: $font-size-paragraph;
+  line-height: 1.6;
+  color: $color-text-dark;
+}
+
+@mixin title-style {
+  font-family: $font-primary;
+  font-size: $font-size-title;
+  font-weight: $font-weight-bold;
+  color: $color-primary-dark;
+  margin-bottom: $spacing-medium;
+}
+
+@mixin subtitle-style {
+  font-family: $font-secondary;
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-semibold;
+  color: $color-primary-darker;
+  margin-top: $spacing-large;
+  margin-bottom: $spacing-small;
+}

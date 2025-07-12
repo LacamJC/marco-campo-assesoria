@@ -1,0 +1,38 @@
+@import "../../assets/css/variables";
+@import "../../assets/css/typography";
+
+.title {
+    @include title-style;
+}
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%; /* faz o link ocupar todo o card */
+}
+
+.cardLink:hover .card {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.icon {
+    font-size: 3rem !important; /* força o tamanho maior */
+    color: #030759;
+    margin-bottom: 1rem;
+}

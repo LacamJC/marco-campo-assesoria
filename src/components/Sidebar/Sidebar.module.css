@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px; /* começa escondido à direita */
+  width: 250px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  transition: right 0.3s ease;
+  z-index: 1050;
+  padding-top: 60px; /* para não ficar atrás do header */
+}
+
+.open {
+  right: 0; /* abre deslizando da direita para esquerda */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1040;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-link {
+  display: inline-block;
+  color: #030759; /* azul escuro - pode usar sua variável se quiser */
+  font-size: 1.1rem; /* um pouco maior que parágrafo */
+  position: relative;
+  text-decoration: none;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.menu-link:hover {
+  color: #040740; /* azul mais escuro no hover */
+  background-color: rgba(160, 160, 160, 0.0392156863);
+  border: 8px;
+}
+
+.menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #040740;
+  transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=Sidebar.module.css.map */

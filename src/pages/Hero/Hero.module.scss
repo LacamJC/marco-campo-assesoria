@@ -1,0 +1,64 @@
+@import "../../assets/css/_variables.scss";
+
+.hero {
+  min-height: 400px; /* ajuste conforme desejar */
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: $color-primary-dark;
+  font-family: $font-primary;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: $color-primary-darker;
+  font-family: $font-secondary;
+}
+
+.paragraph {
+  margin-bottom: 2rem;
+  color: $color-text-dark;
+  font-size: $font-size-paragraph;
+  font-family: $font-text;
+  line-height: 1.5;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.5rem 0 0 0.5rem; /* arredonda só o lado esquerdo */
+}
+
+.button {
+  border: none;
+  background-color: $color-primary-dark;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 12px;
+
+  cursor: pointer; // muda o cursor para indicar clicável
+  font-weight: $font-weight-semibold; // usar peso médio (definido nas variáveis)
+  font-size: $font-size-paragraph; // usar tamanho padrão de texto
+  transition: background-color 0.3s ease; // animação suave no hover
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: lighten($color-primary-dark, 10%);
+  }
+
+  &:focus {
+    outline: 2px solid lighten($color-primary-dark, 20%);
+    outline-offset: 2px;
+  }
+}

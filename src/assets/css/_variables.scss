@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+// Fonte principal serifada
+$font-primary: "Merriweather", serif;
+$font-secondary: "Montserrat", "comic-sans";
+$font-text: "Source Sans 3", cursive;
+// Cores
+$color-primary-dark: #030759; // azul escuro principal
+$color-primary-darker: #040740; // azul ainda mais escuro
+$color-text-dark: #333333; // cinza escuro para texto
+
+// Tamanhos de fonte (em rem)
+$font-size-title: 2.5rem; // títulos principais (ex: h1)
+$font-size-subtitle: 1.5rem; // subtítulos (ex: h2, h3)
+$font-size-paragraph: 1rem; // texto padrão (parágrafos)
+
+// Peso da fonte
+$font-weight-regular: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Espaçamentos
+$spacing-small: 0.5rem;
+$spacing-medium: 1rem;
+$spacing-large: 2rem;
