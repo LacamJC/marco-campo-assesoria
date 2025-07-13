@@ -35,7 +35,7 @@ const areas = [
 
 function AreasAtuacao() {
     return (
-        <section className={`container my-5 ${styles.areas}`}>
+        <section className={`container my-5 ${styles.areas}`} id='atuacao'>
             <h2 className={styles.title}>Nossas Áreas de Atuação</h2>
             <div className="row">
                 {areas.map(({ id, title, description, icon }) => {

@@ -3,7 +3,7 @@ import styles from './Hero.module.css';
 
 function Hero() {
     return (
-        <section className={`container my-5 ${styles.hero}`}>
+        <section className={`container my-5 ${styles.hero}`} id='hero'>
             <div className="row align-items-center">
                 {/* Coluna esquerda */}
                 <div className="col-md-6">

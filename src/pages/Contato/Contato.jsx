@@ -47,7 +47,7 @@ function Contato() {
     };
 
     return (
-        <div className={styles.background_dividido}>
+        <div className={styles.background_dividido} id='contato'>
             <div className={styles.contentWrapper}>
                 <h2 className={styles.sectionTitle}>Entre em contato</h2>
 

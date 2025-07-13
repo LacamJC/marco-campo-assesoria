@@ -2,7 +2,7 @@ import styles from './About.module.css';
 
 function About() {
   return (
-    <main className={`container my-5 ${styles.about}`}>
+    <main className={`container my-5 ${styles.about}`} id='sobre'>
       <div className="row align-items-center">
         {/* Coluna esquerda - texto */}
         <div className="col-md-6">

@@ -1,6 +1,7 @@
 import About from "../About/About"
 import AreasAtuacao from "../AreasAtuacao/AreasAtuacao"
 import Contato from "../Contato/Contato"
+import Footer from "../Footer/Footer"
 import Hero from "../Hero/Hero"
 
 function Home() {
@@ -14,6 +15,8 @@ function Home() {
             <AreasAtuacao />
             <div style={{ height: height }}></div>
             <Contato/>
+            <div style={{ height: height }}></div>
+            <Footer/>
 
         </>
     )

@@ -1,5 +1,11 @@
 import styles from './Sidebar.module.css';
 
+const menuItems = [
+  { id: 1, label: 'Home', href: '#home', icon: 'bi-house-door' },
+  { id: 2, label: 'Sobre', href: '#sobre', icon: 'bi-info-circle' },
+  { id: 3, label: 'Contato', href: '#contato', icon: 'bi-envelope' },
+];
+
 function Sidebar({ isOpen, onClose }) {
   return (
     <>
@@ -12,23 +18,14 @@ function Sidebar({ isOpen, onClose }) {
       {/* Sidebar */}
       <nav className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <ul className="list-unstyled p-3">
-          <li>
-            <a href="#home" onClick={onClose} className={styles['menu-link']}>
-              <i className="bi bi-house-door me-2"></i> Home
-            </a>
-          </li>
-          <li>
-            <a href="#sobre" onClick={onClose} className={styles['menu-link']}>
-              <i className="bi bi-info-circle me-2"></i> Sobre
-            </a>
-          </li>
-          <li>
-            <a href="#contato" onClick={onClose} className={styles['menu-link']}>
-              <i className="bi bi-envelope me-2"></i> Contato
-            </a>
-          </li>
+          {menuItems.map(({ id, label, href, icon }) => (
+            <li key={id}>
+              <a href={href} onClick={onClose} className={styles['menu-link']}>
+                <i className={`bi ${icon} me-2`}></i> {label}
+              </a>
+            </li>
+          ))}
         </ul>
-
       </nav>
     </>
   );
