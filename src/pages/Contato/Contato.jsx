@@ -13,9 +13,6 @@ export default function Contato() {
     const [selecionadas, setSelecionadas] = useState([]);
     const [aceitoTermos, setAceitoTermos] = useState(false);
 
-
-
-
     function toggleCheckbox(area) {
         setSelecionadas(prev =>
             prev.includes(area) ? prev.filter(a => a !== area) : [...prev, area]
@@ -46,8 +43,7 @@ export default function Contato() {
 
         texto += `\nData da solicitação: ${dataFormatada.data}, às ${dataFormatada.hora}`;
 
-        alert(texto)
-        // openChat(texto, contatos[0].href)
+        openChat(texto, contatos[0].href)
     };
 
     return (

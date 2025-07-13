@@ -14,6 +14,7 @@ export function openChat(message, phone) {
     var phone = phone.match(onlyNumbers).join('');
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    // window.open(url, '_blank');
+    alert(message);
 
 }
