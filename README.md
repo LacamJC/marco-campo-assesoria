@@ -48,3 +48,8 @@ Optando por paleta de cores simples mas marcantes, a empresa optou pelas seguint
 
 A estrutura do site segue uma base sólida de seções dividas por colunas de contéudo e imagens complementares.
 
+#### DEPLOY 
+
+Esta aplicação esta hospedada na **Vercel** por sua facilidade em configurar o deploy automatico de aplicações em *React*, graças a isso no momento há dois ambientes no ar.
+
+O ambiente de produção onde está com a branch `Main` para features implementadas de maneira permamente e um ambiente de desenvolvimento na qual posso testar novas funcionalidades e pedir o feedback de terceiros.

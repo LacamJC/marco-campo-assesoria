@@ -1,5 +1,8 @@
 import styles from './Sidebar.module.css';
 import logo from '../../assets/images/logo.png'
+import { useContext } from 'react';
+import { SiteInfoContext } from '../../context/SiteInfoContext';
+
 const menuItems = [
   { id: 1, label: 'Home', href: '#hero', icon: 'bi-house-door' },
   { id: 2, label: 'Sobre', href: '#sobre', icon: 'bi-info-circle' },
@@ -13,6 +16,7 @@ const contactInfo = [
 ];
 
 function Sidebar({ isOpen, onClose }) {
+  const { redesSociais } = useContext(SiteInfoContext)
   return (
     <>
       {/* Overlay */}
@@ -40,7 +44,7 @@ function Sidebar({ isOpen, onClose }) {
           <img src={logo} alt="Logo" className={styles.brandLogo} />
           <p className={styles.brandName}>Marco Campos</p>
           <div className={styles.socialIcons}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-facebook"></i>
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
@@ -48,7 +52,19 @@ function Sidebar({ isOpen, onClose }) {
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <i className="bi bi-instagram"></i>
-            </a>
+            </a> */}
+            {
+              redesSociais.map(item => (
+                <a
+                  key={item.name}  // chave única
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className={item.icon}></i>
+                </a>
+              ))
+            }
           </div>
         </div>
       </nav>

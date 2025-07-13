@@ -1,18 +1,10 @@
+import { useContext } from 'react';
+import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './Footer.module.css';
 
-const contatos = [
-  { label: 'Email', value: 'contato@exemplo.com' },
-  { label: 'Telefone', value: '(11) 99999-9999' },
-];
-
-const redesSociais = [
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'bi-linkedin' },
-  { name: 'Facebook', url: 'https://facebook.com', icon: 'bi-facebook' },
-  { name: 'Instagram', url: 'https://instagram.com', icon: 'bi-instagram' },
-  { name: 'Twitter', url: 'https://twitter.com', icon: 'bi-twitter' },
-];
-
 function Footer() {
+  const { contatos, redesSociais } = useContext(SiteInfoContext)
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>

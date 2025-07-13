@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import './App.css';
+import TermosCondicoes from './pages/TermosCondicoes/TermosCondicoes';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/termos" element={<TermosCondicoes />} />
         </Routes>
       </BrowserRouter>
     </>
