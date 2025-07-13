@@ -58,7 +58,7 @@ export default function Contato() {
         texto += `\nData da solicitação: ${dataFormatada}`;
 
 
-        
+
         // alert(texto)
         openChat(texto, telefoneWhatsApp)
     };
@@ -92,7 +92,15 @@ export default function Contato() {
             </div>
 
             <form className={styles.formColumn} onSubmit={enviarWhatsApp}>
-                {/* <h3>Ou entre em contato </h3> */}
+                <div className={styles.formIntro}>
+                    <h3>Envie sua mensagem via WhatsApp</h3>
+                    <p className={styles.infoIntro}>
+                        Informe seu nome, as áreas de interesse e, se desejar, uma breve observação.
+                        Entraremos em contato o mais breve possível!
+                    </p>
+                </div>
+                <hr />
+
                 <label>
                     Nome
                     <input

@@ -222,4 +222,18 @@ textarea:focus {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
+}
+.formIntro h3 {
+  font-size: 1.3rem; /* maior que o parágrafo */
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: "Montserrat", "comic-sans";
+  color: #030759; /* ou sua cor principal */
+}
+
+.infoIntro {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: "Source Sans 3", cursive;
+  color: #333333;
 }/*# sourceMappingURL=Contato.module.css.map */
