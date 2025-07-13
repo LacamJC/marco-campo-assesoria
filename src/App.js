@@ -7,7 +7,7 @@ import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
 import './App.css';
 import TermosCondicoes from './pages/TermosCondicoes/TermosCondicoes';
-
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/termos" element={<TermosCondicoes />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }

@@ -2,39 +2,10 @@ import { useState, useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './Contato.module.css';
 import { Link } from 'react-router-dom';
-
-// const contatos = [
-//     {
-//         id: 1,
-//         label: 'Telefone',
-//         value: '(11) 99999-9999',
-//         href: 'tel:+5511999999999',
-//         icon: 'bi-telephone-fill',
-//     },
-//     {
-//         id: 2,
-//         label: 'Email',
-//         value: 'contato@exemplo.com',
-//         href: 'mailto:contato@exemplo.com',
-//         icon: 'bi-envelope-fill',
-//     },
-//     {
-//         id: 3,
-//         label: 'Endereço',
-//         value: 'Rua Exemplo, 123 - São Paulo, SP',
-//         icon: 'bi-geo-alt-fill',
-//     },
-// ];
-
-const areasAtuacao = [
-    'Direito Civil',
-    'Direito Trabalhista',
-    'Direito Empresarial',
-    'Direito Tributário',
-];
-
+import { sanitizeInput } from '../../utils/sanitizeInput';
+import { openChat } from '../../services/WhatsAppService';
 export default function Contato() {
-    const { contatos } = useContext(SiteInfoContext)
+    const { contatos, areas } = useContext(SiteInfoContext)
 
     const [nome, setNome] = useState('');
     const [mensagem, setMensagem] = useState('');
@@ -50,10 +21,18 @@ export default function Contato() {
         );
     }
 
+
     const enviarWhatsApp = (e) => {
         e.preventDefault();
 
-        if (!nome.trim()) {
+        const nomeLimpo = sanitizeInput(nome);
+        const mensagemLimpa = sanitizeInput(mensagem);
+        const areasTexto = selecionadas.length > 0
+            ? `${selecionadas.map(sanitizeInput).join(', ')}.\n`
+            : '';
+
+
+        if (!nomeLimpo.trim()) {
             alert('Por favor, preencha todos o campo nome.');
             return;
         }
@@ -62,12 +41,7 @@ export default function Contato() {
             return;
         }
 
-        // Monta a lista de áreas selecionadas em texto
-        const areasTexto = selecionadas.length > 0
-            ? `${selecionadas.join(', ')}.\n`
-            : '';
-
-        var texto = `Olá, meu nome é ${nome}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagem ? `\nObservações: ${mensagem}` : '');
+        var texto = `Olá, meu nome é ${nomeLimpo}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagemLimpa ? `\nObservações: ${mensagem}` : '');
 
         const dataTimestamp = Date.now();
         const dataObj = new Date(dataTimestamp);
@@ -84,10 +58,9 @@ export default function Contato() {
         texto += `\nData da solicitação: ${dataFormatada}`;
 
 
-        const url = `https://wa.me/${telefoneWhatsApp}?text=${encodeURIComponent(texto)}`;
-
-        alert(texto)
-        // window.open(url, '_blank');
+        
+        // alert(texto)
+        openChat(texto, telefoneWhatsApp)
     };
 
     return (
@@ -133,20 +106,26 @@ export default function Contato() {
 
                 <fieldset className={styles.checkboxGroup}>
                     <legend>Qual tipo de serviço está procurando(opcional)</legend>
-                    {areasAtuacao.map(area => (
-                        <div key={area} className="form-check mb-3">
-                            <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id={`checkbox-${area}`}
-                                checked={selecionadas.includes(area)}
-                                onChange={() => toggleCheckbox(area)}
-                            />
-                            <label className="form-check-label" htmlFor={`checkbox-${area}`}>
-                                {area}
-                            </label>
-                        </div>
-                    ))}
+                    {
+                        areas.map(area => {
+                            return <div key={area.area} className="form-check mb-3">
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    id={`checkbox-${area.id}`}
+                                    checked={selecionadas.includes(area.area)}
+                                    onChange={() => toggleCheckbox(area.area)}
+                                />
+                                <label className="form-check-label" htmlFor={`checkbox-${area.id}`}>
+                                    {area.area}
+                                </label>
+                            </div>
+
+                        }
+                        )
+                    }
+
+
                 </fieldset>
 
                 <label>
@@ -178,7 +157,7 @@ export default function Contato() {
                     <label htmlFor="acceptTerms" className="form-check-label" >
                         <span>
                             Aceito os{' '}
-                            <Link to="/termos-e-condicoes" target="_blank" rel="noopener noreferrer">
+                            <Link to="/termos" target="_blank" rel="noopener noreferrer">
                                 termos e condições de uso das informações
                             </Link>
                         </span>
