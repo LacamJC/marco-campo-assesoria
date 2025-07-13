@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { sanitizeInput } from '../../utils/sanitizeInput';
 import { openChat } from '../../services/WhatsAppService';
 import { dateFormat } from '../../utils/dateFormat';
+import { HashLink } from 'react-router-hash-link';
 export default function Contato() {
     const { contatos, areas } = useContext(SiteInfoContext)
 
@@ -148,9 +149,12 @@ export default function Contato() {
                     <label htmlFor="acceptTerms" className="form-check-label" >
                         <span>
                             Aceito os{' '}
-                            <Link to="/termos" rel="noopener noreferrer">
+                            {/* <Link to="/termos" rel="noopener noreferrer">
                                 termos e condições de uso das informações
-                            </Link>
+                            </Link> */}
+                            <HashLink smooth to="/termos#termos" rel="noopener noreferrer">
+                                Termos e condições de uso das informações
+                            </HashLink>
                         </span>
                     </label>
                 </div>
