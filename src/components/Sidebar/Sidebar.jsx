@@ -1,10 +1,15 @@
 import styles from './Sidebar.module.css';
-
+import logo from '../../assets/images/logo.png'
 const menuItems = [
   { id: 1, label: 'Home', href: '#hero', icon: 'bi-house-door' },
   { id: 2, label: 'Sobre', href: '#sobre', icon: 'bi-info-circle' },
-  { id: 3, label: 'Atuação', href: '#atuacao', icon: 'bi bi-back' },
+  { id: 3, label: 'Atuação', href: '#atuacao', icon: 'bi-diagram-3' },
   { id: 4, label: 'Contato', href: '#contato', icon: 'bi-envelope' },
+];
+
+const contactInfo = [
+  { id: 1, icon: 'bi-telephone-fill', label: '(11) 99999-9999', href: 'tel:+5511999999999' },
+  { id: 2, icon: 'bi-envelope-fill', label: 'contato@exemplo.com', href: 'mailto:contato@exemplo.com' },
 ];
 
 function Sidebar({ isOpen, onClose }) {
@@ -27,6 +32,25 @@ function Sidebar({ isOpen, onClose }) {
             </li>
           ))}
         </ul>
+
+        {/* Separador */}
+        <hr className={styles.separator} />
+
+        <div className={styles.brandSection}>
+          <img src={logo} alt="Logo" className={styles.brandLogo} />
+          <p className={styles.brandName}>Marco Campos</p>
+          <div className={styles.socialIcons}>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-facebook"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-linkedin"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <i className="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
       </nav>
     </>
   );

@@ -1,33 +1,21 @@
 @import "../../assets/css/variables";
+@import "../../assets/css/typography";
 
-// .sidebar {
-//   position: fixed;
-//   top: 0;
-//   right: -250px; /* começa escondido à direita */
-//   width: 250px;
-//   height: 100vh;
-//   background-color: #fff;
-//   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
-//   transition: right 0.3s ease;
-//   z-index: 1100; /* maior que header para ficar acima */
-//   padding-top: 60px; /* para não ficar atrás do header */
-// }
 .sidebar {
   position: fixed;
   top: 0;
-  right: -250px; /* começa escondido à direita */
+  right: -250px;
   width: 250px;
   height: 100vh;
   background-color: #fff;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15); /* sombra suave à esquerda */
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
   transition: right 0.3s ease;
-
-  z-index: 1100; /* maior que header para ficar acima */
-  padding-top: 60px; /* para não ficar atrás do header */
+  z-index: 1100;
+  padding-top: 60px;
 }
 
 .open {
-  right: 0; /* abre deslizando da direita para esquerda */
+  right: 0;
 }
 
 .overlay {
@@ -40,7 +28,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 1099; /* abaixo da sidebar, acima do header */
+  z-index: 1099;
 }
 
 .show {
@@ -50,23 +38,22 @@
 
 .menu-link {
   display: inline-block;
-  color: $color-primary-dark; /* azul escuro - pode usar sua variável se quiser */
-  font-size: 1.1rem; /* um pouco maior que parágrafo */
+  width: 100%;
+  color: $color-primary-dark;
+  font-family: $font-primary;
+  font-size: 1.1rem;
+  font-weight: 600;
   position: relative;
   text-decoration: none;
-  padding-bottom: 4px;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
   transition: color 0.3s ease;
-  transition: background-color 0.3s ease;
-  margin-bottom: 20px;
-
-  // border: 2px solid black;
-  width: 100%;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
 }
 
 .menu-link:hover {
-  color: $color-primary-darker; /* azul mais escuro no hover */
-  background-color: #a0a0a00a;
-  border: 8px;
+  color: $color-primary-darker;
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .menu-link::after {
@@ -82,4 +69,73 @@
 
 .menu-link:hover::after {
   width: 100%;
+}
+
+.separator {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  margin: 1.5rem 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: $color-primary-dark;
+  font-size: 1rem;
+  font-family: $font-text;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.07);
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.contactItem i {
+  font-size: 1.2rem;
+}
+
+.contactLink {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: $color-primary-darker;
+  text-decoration: underline;
+}
+
+.brandSection {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.brandLogo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.brandName {
+  font-family: $font-primary;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $color-primary-dark;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  color: $color-primary-dark;
+  font-size: 2rem;
+  transition: color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  color: $color-primary-darker;
 }
