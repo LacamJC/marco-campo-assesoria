@@ -1,4 +1,4 @@
-@import '../../assets/css/variables';
+@import "../../assets/css/variables";
 
 .sidebar {
   position: fixed;
@@ -9,7 +9,7 @@
   background-color: #fff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
   transition: right 0.3s ease;
-  z-index: 1050;
+  z-index: 1100; /* maior que header para ficar acima */
   padding-top: 60px; /* para não ficar atrás do header */
 }
 
@@ -27,7 +27,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 1040;
+  z-index: 1099; /* abaixo da sidebar, acima do header */
 }
 
 .show {
@@ -45,7 +45,6 @@
   transition: color 0.3s ease;
   transition: background-color 0.3s ease;
   margin-bottom: 20px;
-
 
   // border: 2px solid black;
   width: 100%;

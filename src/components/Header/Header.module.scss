@@ -1,9 +1,13 @@
 .header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-    height: 100px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  height: 100px;
+  position: fixed;    /* fixa no topo */
+  top: 0;
+  left: 0;
+  width: 100%;        /* ocupa a largura total da viewport */
+  z-index: 1050;      /* fica acima de outros elementos */
 }
-
 .logo {
     height: 70px; /* ou o tamanho que preferir */
     cursor: pointer;

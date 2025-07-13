@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+section, main {
+  scroll-margin-top: 100px; /* altura do header fixo */
+}
+
 .sidebar {
   position: fixed;
   top: 0;
@@ -9,7 +13,7 @@
   background-color: #fff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
   transition: right 0.3s ease;
-  z-index: 1050;
+  z-index: 1100; /* maior que header para ficar acima */
   padding-top: 60px; /* para não ficar atrás do header */
 }
 
@@ -27,7 +31,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
-  z-index: 1040;
+  z-index: 1099; /* abaixo da sidebar, acima do header */
 }
 
 .show {
