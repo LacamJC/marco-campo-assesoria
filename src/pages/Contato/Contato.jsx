@@ -1,11 +1,9 @@
 import { useState, useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './Contato.module.css';
-import { Link } from 'react-router-dom';
-import { sanitizeInput } from '../../utils/sanitizeInput';
 import { openChat } from '../../services/WhatsAppService';
-import { dateFormat } from '../../utils/dateFormat';
 import { HashLink } from 'react-router-hash-link';
+import { montarMensagem } from '../../services/ContatoService';
 export default function Contato() {
     const { contatos, areas } = useContext(SiteInfoContext)
 
@@ -23,13 +21,7 @@ export default function Contato() {
     const enviarWhatsApp = (e) => {
         e.preventDefault();
 
-        const nomeLimpo = sanitizeInput(nome);
-        const mensagemLimpa = sanitizeInput(mensagem);
-        const areasTexto = selecionadas.length > 0
-            ? `${selecionadas.map(sanitizeInput).join(', ')}.\n`
-            : '';
-
-        if (!nomeLimpo.trim()) {
+        if (!nome.trim()) {
             alert('Por favor, preencha todos o campo nome.');
             return;
         }
@@ -38,12 +30,7 @@ export default function Contato() {
             return;
         }
 
-        var texto = `Olá, meu nome é ${nomeLimpo}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagemLimpa ? `\nObservações: ${mensagemLimpa}` : '');
-
-        const dataFormatada = dateFormat(Date.now());
-
-        texto += `\nData da solicitação: ${dataFormatada.data}, às ${dataFormatada.hora}`;
-
+        const texto = montarMensagem({ nome, mensagem, selecionadas });
         openChat(texto, contatos[0].href)
     };
 
