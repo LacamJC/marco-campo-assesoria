@@ -1,29 +1,30 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './Contato.module.css';
 import { Link } from 'react-router-dom';
 
-const contatos = [
-    {
-        id: 1,
-        label: 'Telefone',
-        value: '(11) 99999-9999',
-        href: 'tel:+5511999999999',
-        icon: 'bi-telephone-fill',
-    },
-    {
-        id: 2,
-        label: 'Email',
-        value: 'contato@exemplo.com',
-        href: 'mailto:contato@exemplo.com',
-        icon: 'bi-envelope-fill',
-    },
-    {
-        id: 3,
-        label: 'Endereço',
-        value: 'Rua Exemplo, 123 - São Paulo, SP',
-        icon: 'bi-geo-alt-fill',
-    },
-];
+// const contatos = [
+//     {
+//         id: 1,
+//         label: 'Telefone',
+//         value: '(11) 99999-9999',
+//         href: 'tel:+5511999999999',
+//         icon: 'bi-telephone-fill',
+//     },
+//     {
+//         id: 2,
+//         label: 'Email',
+//         value: 'contato@exemplo.com',
+//         href: 'mailto:contato@exemplo.com',
+//         icon: 'bi-envelope-fill',
+//     },
+//     {
+//         id: 3,
+//         label: 'Endereço',
+//         value: 'Rua Exemplo, 123 - São Paulo, SP',
+//         icon: 'bi-geo-alt-fill',
+//     },
+// ];
 
 const areasAtuacao = [
     'Direito Civil',
@@ -33,12 +34,15 @@ const areasAtuacao = [
 ];
 
 export default function Contato() {
+    const { contatos } = useContext(SiteInfoContext)
+
     const [nome, setNome] = useState('');
     const [mensagem, setMensagem] = useState('');
     const [selecionadas, setSelecionadas] = useState([]);
     const [aceitoTermos, setAceitoTermos] = useState(false);
 
-    const telefoneWhatsApp = '5511999999999'; // seu número no formato internacional
+    const onlyNumbers = /\d+/g; // pega um ou mais dígitos, globalmente
+    const telefoneWhatsApp = contatos[0].href.match(onlyNumbers).join('');
 
     function toggleCheckbox(area) {
         setSelecionadas(prev =>
