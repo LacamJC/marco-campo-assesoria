@@ -1,5 +1,17 @@
 @import "../../assets/css/variables";
 
+// .sidebar {
+//   position: fixed;
+//   top: 0;
+//   right: -250px; /* começa escondido à direita */
+//   width: 250px;
+//   height: 100vh;
+//   background-color: #fff;
+//   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+//   transition: right 0.3s ease;
+//   z-index: 1100; /* maior que header para ficar acima */
+//   padding-top: 60px; /* para não ficar atrás do header */
+// }
 .sidebar {
   position: fixed;
   top: 0;
@@ -7,8 +19,9 @@
   width: 250px;
   height: 100vh;
   background-color: #fff;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15); /* sombra suave à esquerda */
   transition: right 0.3s ease;
+
   z-index: 1100; /* maior que header para ficar acima */
   padding-top: 60px; /* para não ficar atrás do header */
 }

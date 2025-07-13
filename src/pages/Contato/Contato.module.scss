@@ -1,5 +1,5 @@
-@import "../../assets/css/typography";
-@import "../../assets/css/variables";
+@import "../../assets/css/_typography.scss";
+@import "../../assets/css/_variables.scss";
 
 .background_dividido {
     width: 100%;
@@ -38,7 +38,9 @@
     width: 280px;
     height: 300px;
     border-radius: 16px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.055),
+        0 2px 4px rgba(0, 0, 0, 0.016); // sombra leve e um toque extra suave
 
     display: flex;
     flex-direction: column;
@@ -47,20 +49,32 @@
     padding: 1.5rem;
     text-align: center;
     user-select: none;
+
+    transition: 0.3s ease all;
+
+    &:hover {
+        /* Animação */
+        transform: translateY(-8px);
+        box-shadow:
+            0 6px 12px rgba(0, 0, 0, 0.12),
+            0 2px 4px rgba(0, 0, 0, 0.05); // sombra leve e um toque extra suave
+    }
 }
 
 .icon {
     font-size: 4rem;
-    color: #030759;
+    color: $color-primary-dark;
     margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); // sombra suave no ícone
 }
 
 .label {
     font-family: "Merriweather", serif;
     font-weight: 700;
     font-size: 1.5rem;
-    color: #040740;
+    color: $color-primary-darker;
     margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); // sombra sutil no título
 }
 
 .description {
@@ -70,15 +84,16 @@
     margin-bottom: 1.5rem;
     padding: 0 0.5rem;
     word-wrap: break-word;
-    min-height: 3.5rem; /* altura fixa para evitar desalinhamento */
-    display: -webkit-box; /* para truncar com ... se quiser, opcional */
-    -webkit-line-clamp: 2; /* limitar a 2 linhas, opcional */
+    min-height: 3.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // sombra leve no parágrafo
 }
 
 .button {
-    background-color: #030759;
+    background-color: $color-primary-dark;
     color: white;
     border: none;
     padding: 0.6rem 1.5rem;
@@ -87,8 +102,18 @@
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease;
     user-select: none;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-8px);
+        background-color: lighten($color-primary-dark, 20%);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
 }
 
 .button:hover:not(:disabled) {
@@ -101,10 +126,10 @@
 }
 
 .sectionTitle {
-      font-family: 'Merriweather', serif;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #030759;
-      text-align: center;
-      margin-bottom: 2rem;
+    font-family: "Merriweather", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #030759;
+    text-align: center;
+    margin-bottom: 2rem;
 }

@@ -60,9 +60,12 @@ section, main {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s ease all;
 }
 .button:hover {
   background-color: #050b8a;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .button:focus {
   outline: 2px solid #060fbc;

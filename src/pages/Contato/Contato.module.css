@@ -47,7 +47,7 @@ section, main {
   width: 280px;
   height: 300px;
   border-radius: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.055), 0 2px 4px rgba(0, 0, 0, 0.016);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,12 +57,19 @@ section, main {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  transition: 0.3s ease all;
+}
+.card:hover {
+  /* Animação */
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .icon {
   font-size: 4rem;
   color: #030759;
   margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .label {
@@ -71,6 +78,7 @@ section, main {
   font-size: 1.5rem;
   color: #040740;
   margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .description {
@@ -80,11 +88,12 @@ section, main {
   margin-bottom: 1.5rem;
   padding: 0 0.5rem;
   word-wrap: break-word;
-  min-height: 3.5rem; /* altura fixa para evitar desalinhamento */
-  display: -webkit-box; /* para truncar com ... se quiser, opcional */
-  -webkit-line-clamp: 2; /* limitar a 2 linhas, opcional */
+  min-height: 3.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .button {
@@ -97,10 +106,15 @@ section, main {
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.3s ease;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.button:hover {
+  transform: translateY(-8px);
+  background-color: #060fbc;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover:not(:disabled) {
