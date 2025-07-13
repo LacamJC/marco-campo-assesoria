@@ -1,135 +1,217 @@
-@import "../../assets/css/_typography.scss";
-@import "../../assets/css/_variables.scss";
+@import "../../assets/css/variables";
 
-.background_dividido {
-    width: 100%;
-    height: 120vh; /* altura total da viewport, ajusta conforme quiser */
-
-    background:
-        linear-gradient(to right, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 50%),
-        /* metade branca */ url("https://placehold.co/1200x1200") right center no-repeat; /* imagem à direita */
-    background-size:
-        50% 100%,
-        50% 100%; /* metade da largura para cada */
-    background-repeat: no-repeat;
-    background-position:
-        left center,
-        right center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Container geral da seção contato */
+.contatoSection {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-// configuração dos cards
+/* Título da seção */
+.sectionTitle {
+  width: 100%;
+  font-family: $font-primary;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: $color-primary-dark;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Colunas: informações e formulário */
+.infoColumn,
+.formColumn {
+  flex: 1 1 350px; /* flex-grow, shrink e base para responsividade */
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+/* Parágrafo introdutório */
+.infoIntro {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+/* Container dos cards de contato */
 .cardsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-    padding: 3rem;
-    width: 100%;
-    box-sizing: border-box;
-    flex-wrap: wrap; /* para responsividade: quebra linha em telas pequenas */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
-.card {
-    background-color: #f8f9fa;
-    width: 280px;
-    height: 300px;
-    border-radius: 16px;
-    box-shadow:
-        0 6px 12px rgba(0, 0, 0, 0.055),
-        0 2px 4px rgba(0, 0, 0, 0.016); // sombra leve e um toque extra suave
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    text-align: center;
-    user-select: none;
-
-    transition: 0.3s ease all;
-
-    &:hover {
-        /* Animação */
-        transform: translateY(-8px);
-        box-shadow:
-            0 6px 12px rgba(0, 0, 0, 0.12),
-            0 2px 4px rgba(0, 0, 0, 0.05); // sombra leve e um toque extra suave
-    }
+/* Card individual de contato */
+.contactCard {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.5rem;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: box-shadow 0.3s ease;
 }
 
+.contactCard:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Ícone dentro do card */
 .icon {
-    font-size: 4rem;
-    color: $color-primary-dark;
-    margin-bottom: 1rem;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15); // sombra suave no ícone
+  font-size: 2rem;
+  color: #030759;
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 
-.label {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: $color-primary-darker;
-    margin-bottom: 0.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); // sombra sutil no título
+/* Conteúdo textual dentro do card */
+.contactContent {
+  display: flex;
+  flex-direction: column;
 }
 
-.description {
-    font-family: "Merriweather", serif;
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-    padding: 0 0.5rem;
-    word-wrap: break-word;
-    min-height: 3.5rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // sombra leve no parágrafo
+/* Label do contato */
+.contactLabel {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #040740;
+  margin-bottom: 0.25rem;
+  font-family: $font-primary;
 }
+
+/* Link do contato */
+.contactLink {
+  color: #030759;
+  font-weight: 400;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.contactLink:hover {
+  color: #040740;
+  text-decoration: underline;
+}
+
+/* Valor sem link */
+.contactValue {
+  color: #555;
+  font-weight: 400;
+  word-break: break-word;
+  font-family: "Inter", sans-serif;
+}
+
+/* Itens do formulário */
+
+form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: $color-primary-darker;
+  font-family: $font-primary;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+input[type="text"],
+textarea {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1.8px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: $color-primary-dark;
+  box-shadow: 0 0 5px rgba(3, 7, 89, 0.4);
+}
+
+/* Grupo de checkboxes */
+
+.checkboxGroup {
+  border: none;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+.checkboxGroup legend {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #030759;
+  font-family: $font-primary;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: $color-primary-darker;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+}
+
+.checkboxLabel input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Botão do formulário */
 
 .button {
-    background-color: $color-primary-dark;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    user-select: none;
-
-    transition:
-        transform 0.3s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease;
-
-    &:hover {
-        transform: translateY(-8px);
-        background-color: lighten($color-primary-dark, 20%);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    }
+  background-color: $color-primary-dark;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+  user-select: none;
+  font-family: $font-primary;
 }
 
-.button:hover:not(:disabled) {
-    background-color: #02054d;
+.button:hover {
+  background-color: #02054d;
 }
 
-.button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-}
+/* Responsividade */
 
-.sectionTitle {
-    font-family: "Merriweather", serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #030759;
-    text-align: center;
-    margin-bottom: 2rem;
+@media (max-width: 768px) {
+  .contatoSection {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
 }
