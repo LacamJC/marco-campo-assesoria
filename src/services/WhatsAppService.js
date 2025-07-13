@@ -18,3 +18,4 @@ export function openChat(message, phone) {
     alert(message);
 
 }
+

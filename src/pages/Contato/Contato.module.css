@@ -101,7 +101,7 @@ body {
   font-size: 0.9rem;
   color: #f5f5f5;
   margin-bottom: 0.25rem;
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", "comic-sans";
 }
 
 /* Link do contato */
@@ -133,13 +133,12 @@ form label {
   flex-direction: column;
   font-weight: 600;
   color: #040740;
-  font-family: "Merriweather", serif;
+  font-family: "Montserrat", "comic-sans";
   margin-bottom: 1rem;
   font-size: 1rem;
 }
-
-input[type=text],
-textarea {
+form label input[type=text],
+form label textarea {
   margin-top: 0.4rem;
   padding: 0.6rem 0.8rem;
   border-radius: 8px;
@@ -149,9 +148,8 @@ textarea {
   resize: vertical;
   transition: border-color 0.3s ease;
 }
-
-input[type=text]:focus,
-textarea:focus {
+form label input[type=text]:focus,
+form label textarea:focus {
   outline: none;
   border-color: #030759;
   box-shadow: 0 0 5px rgba(3, 7, 89, 0.4);

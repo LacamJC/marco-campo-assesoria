@@ -18,13 +18,7 @@ function AreasAtuacao() {
                         const linkPath = `/atuacao/${slugify(id)}#${slugify(title)}`;
                         return (
                             <div key={id} className="col-md-6 col-lg-3 mb-4">
-                                {/* <Link to={linkPath} className={styles.cardLink}>
-                                    <div className={styles.card}>
-                                        <i className={`bi ${icon} ${styles.icon}`}></i>
-                                        <h3 className={styles.cardTitle}>{title}</h3>
-                                        <p className={styles.cardDescription}>{description}</p>
-                                    </div>
-                                </Link> */}
+
                                 <HashLink smooth to={linkPath} className={styles.cardLink}>
                                     <div className={styles.card}>
                                         <i className={`bi ${icon} ${styles.icon}`}></i>
