@@ -2,47 +2,16 @@ import { useState, useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './Contato.module.css';
 import { Link } from 'react-router-dom';
-
-// const contatos = [
-//     {
-//         id: 1,
-//         label: 'Telefone',
-//         value: '(11) 99999-9999',
-//         href: 'tel:+5511999999999',
-//         icon: 'bi-telephone-fill',
-//     },
-//     {
-//         id: 2,
-//         label: 'Email',
-//         value: 'contato@exemplo.com',
-//         href: 'mailto:contato@exemplo.com',
-//         icon: 'bi-envelope-fill',
-//     },
-//     {
-//         id: 3,
-//         label: 'Endereço',
-//         value: 'Rua Exemplo, 123 - São Paulo, SP',
-//         icon: 'bi-geo-alt-fill',
-//     },
-// ];
-
-const areasAtuacao = [
-    'Direito Civil',
-    'Direito Trabalhista',
-    'Direito Empresarial',
-    'Direito Tributário',
-];
-
+import { sanitizeInput } from '../../utils/sanitizeInput';
+import { openChat } from '../../services/WhatsAppService';
+import { dateFormat } from '../../utils/dateFormat';
 export default function Contato() {
-    const { contatos } = useContext(SiteInfoContext)
+    const { contatos, areas } = useContext(SiteInfoContext)
 
     const [nome, setNome] = useState('');
     const [mensagem, setMensagem] = useState('');
     const [selecionadas, setSelecionadas] = useState([]);
     const [aceitoTermos, setAceitoTermos] = useState(false);
-
-    const onlyNumbers = /\d+/g; // pega um ou mais dígitos, globalmente
-    const telefoneWhatsApp = contatos[0].href.match(onlyNumbers).join('');
 
     function toggleCheckbox(area) {
         setSelecionadas(prev =>
@@ -53,7 +22,13 @@ export default function Contato() {
     const enviarWhatsApp = (e) => {
         e.preventDefault();
 
-        if (!nome.trim()) {
+        const nomeLimpo = sanitizeInput(nome);
+        const mensagemLimpa = sanitizeInput(mensagem);
+        const areasTexto = selecionadas.length > 0
+            ? `${selecionadas.map(sanitizeInput).join(', ')}.\n`
+            : '';
+
+        if (!nomeLimpo.trim()) {
             alert('Por favor, preencha todos o campo nome.');
             return;
         }
@@ -62,32 +37,13 @@ export default function Contato() {
             return;
         }
 
-        // Monta a lista de áreas selecionadas em texto
-        const areasTexto = selecionadas.length > 0
-            ? `${selecionadas.join(', ')}.\n`
-            : '';
+        var texto = `Olá, meu nome é ${nomeLimpo}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagemLimpa ? `\nObservações: ${mensagemLimpa}` : '');
 
-        var texto = `Olá, meu nome é ${nome}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagem ? `\nObservações: ${mensagem}` : '');
+        const dataFormatada = dateFormat(Date.now());
 
-        const dataTimestamp = Date.now();
-        const dataObj = new Date(dataTimestamp);
+        texto += `\nData da solicitação: ${dataFormatada.data}, às ${dataFormatada.hora}`;
 
-        const dia = String(dataObj.getDate()).padStart(2, '0');
-        const mes = String(dataObj.getMonth() + 1).padStart(2, '0'); // mês começa do 0
-        const ano = dataObj.getFullYear();
-
-        const hora = String(dataObj.getHours()).padStart(2, '0');
-        const minutos = String(dataObj.getMinutes()).padStart(2, '0');
-
-        const dataFormatada = `${dia}/${mes}/${ano}, às ${hora}:${minutos}`;
-
-        texto += `\nData da solicitação: ${dataFormatada}`;
-
-
-        const url = `https://wa.me/${telefoneWhatsApp}?text=${encodeURIComponent(texto)}`;
-
-        alert(texto)
-        // window.open(url, '_blank');
+        openChat(texto, contatos[0].href)
     };
 
     return (
@@ -119,7 +75,15 @@ export default function Contato() {
             </div>
 
             <form className={styles.formColumn} onSubmit={enviarWhatsApp}>
-                {/* <h3>Ou entre em contato </h3> */}
+                <div className={styles.formIntro}>
+                    <h3>Envie sua mensagem via WhatsApp</h3>
+                    <p className={styles.infoIntro}>
+                        Informe seu nome, as áreas de interesse e, se desejar, uma breve observação.
+                        Entraremos em contato o mais breve possível!
+                    </p>
+                </div>
+                <hr />
+
                 <label>
                     Nome
                     <input
@@ -133,20 +97,26 @@ export default function Contato() {
 
                 <fieldset className={styles.checkboxGroup}>
                     <legend>Qual tipo de serviço está procurando(opcional)</legend>
-                    {areasAtuacao.map(area => (
-                        <div key={area} className="form-check mb-3">
-                            <input
-                                className="form-check-input"
-                                type="checkbox"
-                                id={`checkbox-${area}`}
-                                checked={selecionadas.includes(area)}
-                                onChange={() => toggleCheckbox(area)}
-                            />
-                            <label className="form-check-label" htmlFor={`checkbox-${area}`}>
-                                {area}
-                            </label>
-                        </div>
-                    ))}
+                    {
+                        areas.map(area => {
+                            return <div key={area.area} className="form-check mb-3">
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    id={`checkbox-${area.id}`}
+                                    checked={selecionadas.includes(area.area)}
+                                    onChange={() => toggleCheckbox(area.area)}
+                                />
+                                <label className="form-check-label" htmlFor={`checkbox-${area.id}`}>
+                                    {area.area}
+                                </label>
+                            </div>
+
+                        }
+                        )
+                    }
+
+
                 </fieldset>
 
                 <label>
@@ -178,7 +148,7 @@ export default function Contato() {
                     <label htmlFor="acceptTerms" className="form-check-label" >
                         <span>
                             Aceito os{' '}
-                            <Link to="/termos-e-condicoes" target="_blank" rel="noopener noreferrer">
+                            <Link to="/termos" rel="noopener noreferrer">
                                 termos e condições de uso das informações
                             </Link>
                         </span>

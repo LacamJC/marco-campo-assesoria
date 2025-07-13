@@ -65,7 +65,7 @@ body {
 
 /* Card individual de contato */
 .contactCard {
-  background-color: #f8f9fa;
+  background-image: linear-gradient(to right, #030759 60%, #040740);
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem 1.5rem;
@@ -73,17 +73,18 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .contactCard:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateX(8px);
 }
 
 /* Ícone dentro do card */
 .icon {
   font-size: 2rem;
-  color: #030759;
+  color: #f5f5f5;
   flex-shrink: 0;
   margin-top: 4px;
 }
@@ -98,14 +99,14 @@ body {
 .contactLabel {
   font-weight: 600;
   font-size: 0.9rem;
-  color: #040740;
+  color: #f5f5f5;
   margin-bottom: 0.25rem;
   font-family: "Merriweather", serif;
 }
 
 /* Link do contato */
 .contactLink {
-  color: #030759;
+  color: #f5f5f5;
   font-weight: 400;
   text-decoration: none;
   word-break: break-word;
@@ -114,13 +115,13 @@ body {
 }
 
 .contactLink:hover {
-  color: #040740;
+  color: white;
   text-decoration: underline;
 }
 
 /* Valor sem link */
 .contactValue {
-  color: #555;
+  color: gainsboro;
   font-weight: 400;
   word-break: break-word;
   font-family: "Inter", sans-serif;
@@ -208,7 +209,7 @@ textarea:focus {
 }
 
 .button:hover {
-  background-color: #02054d;
+  background-color: #050b8a;
 }
 
 /* Responsividade */
@@ -221,4 +222,18 @@ textarea:focus {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
+}
+.formIntro h3 {
+  font-size: 1.3rem; /* maior que o parágrafo */
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family: "Montserrat", "comic-sans";
+  color: #030759; /* ou sua cor principal */
+}
+
+.infoIntro {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-family: "Source Sans 3", cursive;
+  color: #333333;
 }/*# sourceMappingURL=Contato.module.css.map */

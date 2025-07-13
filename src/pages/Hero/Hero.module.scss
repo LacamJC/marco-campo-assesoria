@@ -1,10 +1,5 @@
 @import "../../assets/css/_variables.scss";
 
-.hero {
-  // min-height: 400px; /* ajuste conforme desejar */
-  // min-height: 90vh;
-}
-
 .title {
   font-weight: 700;
   font-size: 2.5rem;
@@ -41,19 +36,20 @@
   border: none;
   background-color: $color-primary-dark;
   color: white;
-  width: 200px;
-  height: 40px;
+  width: 220px;
+  height: 50px;
   border-radius: 12px;
-
+  text-decoration: none !important;
   cursor: pointer; // muda o cursor para indicar clicável
   font-weight: $font-weight-semibold; // usar peso médio (definido nas variáveis)
-  font-size: $font-size-paragraph; // usar tamanho padrão de texto
+  font-size: 1.2rem; // usar tamanho padrão de texto
   transition: background-color 0.3s ease; // animação suave no hover
 
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
+  // padding: 0.75rem 1.8rem;
 
   &:hover {
     background-color: lighten($color-primary-dark, 10%);

@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './Footer.module.css';
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
-  const { contatos, redesSociais } = useContext(SiteInfoContext)
+  const { contatos, redesSociais, menuItems } = useContext(SiteInfoContext)
 
   return (
     <footer className={styles.footer}>
@@ -12,10 +13,12 @@ function Footer() {
         <div className={styles.column}>
           <h4>Seções</h4>
           <ul className={styles.list}>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#atuacao">Atuação</a></li>
-            <li><a href="#contato">Contato</a></li>
+            {
+              menuItems[0].map((item) => {
+                return <li key={item.icon} ><HashLink smooth to={item.href} >
+                  {item.label}</HashLink></li>
+              })
+            }
           </ul>
         </div>
 
@@ -50,7 +53,7 @@ function Footer() {
       <div className={styles.copyright}>
         © {new Date().getFullYear()} Escritório Marco Campo. Todos os direitos reservados.
       </div>
-    </footer>
+    </footer >
   );
 }
 

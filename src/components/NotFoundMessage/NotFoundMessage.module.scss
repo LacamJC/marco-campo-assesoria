@@ -1,0 +1,57 @@
+@import '../../assets/css/variables';
+.container {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  background-color: $color-contrast-light;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(3, 7, 89, 0.15);
+  font-family: $font-secondary;
+  color: $color-primary-dark;
+}
+
+.iconError {
+  font-size: 5rem;
+  color: #d9534f; /* Vermelho para erro */
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.message {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  color: $color-text-dark;
+  line-height: 1.5;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $color-contrast-light;
+  background-color: $color-primary-dark;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover,
+.button:focus {
+  background-color: lighten($color-primary-dark, 10%);
+  outline: none;
+}
+
+.iconButton {
+  font-size: 1.5rem;
+}

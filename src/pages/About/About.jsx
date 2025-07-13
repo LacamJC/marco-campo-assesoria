@@ -8,7 +8,7 @@ function About() {
         <div className="col-md-6">
           <h1 className={styles.title}>Sobre Nós</h1>
           <p className={styles.paragraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, urna at cursus cursus, urna lacus cursus lorem, sed sodales purus ipsum ut erat. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nemo est sint atque. Maiores quas, repudiandae rerum molestiae velit accusantium, magnam expedita veniam ea reprehenderit ipsa officiis. Incidunt, quisquam soluta? Lorem, ipsum dolor sit amet 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, urna at cursus cursus, urna lacus cursus lorem, sed sodales purus ipsum ut erat. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nemo est sint atque. Maiores quas, repudiandae rerum molestiae velit accusantium, magnam expedita veniam ea reprehenderit ipsa officiis. Incidunt, quisquam soluta? Lorem, ipsum dolor sit amet
           </p>
 
           <section className={styles.section}>
@@ -32,6 +32,7 @@ function About() {
             src="https://placehold.co/600x400"
             alt="Sobre imagem"
             className={styles.image}
+            loading="lazy"
           />
         </div>
       </div>

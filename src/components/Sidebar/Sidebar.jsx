@@ -2,21 +2,11 @@ import styles from './Sidebar.module.css';
 import logo from '../../assets/images/logo.png'
 import { useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
-
-const menuItems = [
-  { id: 1, label: 'Home', href: '#hero', icon: 'bi-house-door' },
-  { id: 2, label: 'Sobre', href: '#sobre', icon: 'bi-info-circle' },
-  { id: 3, label: 'Atuação', href: '#atuacao', icon: 'bi-diagram-3' },
-  { id: 4, label: 'Contato', href: '#contato', icon: 'bi-envelope' },
-];
-
-const contactInfo = [
-  { id: 1, icon: 'bi-telephone-fill', label: '(11) 99999-9999', href: 'tel:+5511999999999' },
-  { id: 2, icon: 'bi-envelope-fill', label: 'contato@exemplo.com', href: 'mailto:contato@exemplo.com' },
-];
+import { HashLink } from 'react-router-hash-link';
 
 function Sidebar({ isOpen, onClose }) {
-  const { redesSociais } = useContext(SiteInfoContext)
+  const { redesSociais, menuItems } = useContext(SiteInfoContext)
+
   return (
     <>
       {/* Overlay */}
@@ -28,13 +18,15 @@ function Sidebar({ isOpen, onClose }) {
       {/* Sidebar */}
       <nav className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <ul className="list-unstyled p-3">
-          {menuItems.map(({ id, label, href, icon }) => (
-            <li key={id}>
-              <a href={href} onClick={onClose} className={styles['menu-link']}>
+          {menuItems[0].map(({ id, label, href, icon }) => {
+
+            return <li key={id}>
+              <HashLink smooth to={href} onClick={onClose} className={styles['menu-link']}>
                 <i className={`bi ${icon} me-2`}></i> {label}
-              </a>
+              </HashLink>
             </li>
-          ))}
+
+          })}
         </ul>
 
         {/* Separador */}
@@ -44,15 +36,6 @@ function Sidebar({ isOpen, onClose }) {
           <img src={logo} alt="Logo" className={styles.brandLogo} />
           <p className={styles.brandName}>Marco Campos</p>
           <div className={styles.socialIcons}>
-            {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-facebook"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-linkedin"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <i className="bi bi-instagram"></i>
-            </a> */}
             {
               redesSociais.map(item => (
                 <a
