@@ -1,5 +1,5 @@
+import { HashLink } from 'react-router-hash-link';
 import styles from './Hero.module.css';
-// import heroImage from './hero-image.jpg'; // coloque sua imagem aqui
 
 function Hero() {
     return (
@@ -13,9 +13,10 @@ function Hero() {
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco, Lorem ipsum dolor sit amet,
                     </p>
                     <p className={styles.paragraph}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     </p>
-                    <button className={`${styles.button} mb-3`}>Entre em Contato</button>
+                    <HashLink smooth to="/#contato" className={`${styles.button} mb-3`} style={{ textDecorationLine: 'none' }}>
+                        Entre em contato</HashLink>
                 </div>
 
                 {/* Coluna direita */}

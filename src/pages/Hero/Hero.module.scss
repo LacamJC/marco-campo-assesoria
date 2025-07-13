@@ -44,7 +44,7 @@
   width: 200px;
   height: 40px;
   border-radius: 12px;
-
+  text-decoration: none !important;
   cursor: pointer; // muda o cursor para indicar clicável
   font-weight: $font-weight-semibold; // usar peso médio (definido nas variáveis)
   font-size: $font-size-paragraph; // usar tamanho padrão de texto
