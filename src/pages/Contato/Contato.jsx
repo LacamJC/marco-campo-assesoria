@@ -4,6 +4,7 @@ import styles from './Contato.module.css';
 import { Link } from 'react-router-dom';
 import { sanitizeInput } from '../../utils/sanitizeInput';
 import { openChat } from '../../services/WhatsAppService';
+import { dateFormat } from '../../utils/dateFormat';
 export default function Contato() {
     const { contatos, areas } = useContext(SiteInfoContext)
 
@@ -12,15 +13,14 @@ export default function Contato() {
     const [selecionadas, setSelecionadas] = useState([]);
     const [aceitoTermos, setAceitoTermos] = useState(false);
 
-    const onlyNumbers = /\d+/g; // pega um ou mais dígitos, globalmente
-    const telefoneWhatsApp = contatos[0].href.match(onlyNumbers).join('');
+
+
 
     function toggleCheckbox(area) {
         setSelecionadas(prev =>
             prev.includes(area) ? prev.filter(a => a !== area) : [...prev, area]
         );
     }
-
 
     const enviarWhatsApp = (e) => {
         e.preventDefault();
@@ -31,7 +31,6 @@ export default function Contato() {
             ? `${selecionadas.map(sanitizeInput).join(', ')}.\n`
             : '';
 
-
         if (!nomeLimpo.trim()) {
             alert('Por favor, preencha todos o campo nome.');
             return;
@@ -41,26 +40,14 @@ export default function Contato() {
             return;
         }
 
-        var texto = `Olá, meu nome é ${nomeLimpo}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagemLimpa ? `\nObservações: ${mensagem}` : '');
+        var texto = `Olá, meu nome é ${nomeLimpo}.\nPreciso de serviços relacionados a ${areasTexto}` + (mensagemLimpa ? `\nObservações: ${mensagemLimpa}` : '');
 
-        const dataTimestamp = Date.now();
-        const dataObj = new Date(dataTimestamp);
+        const dataFormatada = dateFormat(Date.now());
 
-        const dia = String(dataObj.getDate()).padStart(2, '0');
-        const mes = String(dataObj.getMonth() + 1).padStart(2, '0'); // mês começa do 0
-        const ano = dataObj.getFullYear();
+        texto += `\nData da solicitação: ${dataFormatada.data}, às ${dataFormatada.hora}`;
 
-        const hora = String(dataObj.getHours()).padStart(2, '0');
-        const minutos = String(dataObj.getMinutes()).padStart(2, '0');
-
-        const dataFormatada = `${dia}/${mes}/${ano}, às ${hora}:${minutos}`;
-
-        texto += `\nData da solicitação: ${dataFormatada}`;
-
-
-
-        // alert(texto)
-        openChat(texto, telefoneWhatsApp)
+        alert(texto)
+        // openChat(texto, contatos[0].href)
     };
 
     return (
