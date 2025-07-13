@@ -8,6 +8,7 @@ import Header from './components/Header/Header';
 import './App.css';
 import TermosCondicoes from './pages/TermosCondicoes/TermosCondicoes';
 import Footer from './components/Footer/Footer';
+import AtuacaoPage from './pages/AtuacaoPage/AtuacaoPage.jsx';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/termos" element={<TermosCondicoes />} />
+          <Route path="atuacao/:id" element={<AtuacaoPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>

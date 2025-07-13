@@ -14,7 +14,7 @@ function AreasAtuacao() {
                 <h2 className={styles.title}>Nossas Áreas de Atuação</h2>
                 <div className="row">
                     {areas.map(({ id, title, description, icon }) => {
-                        const linkPath = `/atuacao/${slugify(title)}`;
+                        const linkPath = `/atuacao/${slugify(id)}`;
                         return (
                             <div key={id} className="col-md-6 col-lg-3 mb-4">
                                 <Link to={linkPath} className={styles.cardLink}>

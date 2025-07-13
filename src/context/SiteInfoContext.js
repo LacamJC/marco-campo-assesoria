@@ -91,12 +91,46 @@ export function SiteInfoProvider({ children }) {
         { id: 5, label: 'Termos e Condições', href: '/termos', icon: 'bi-file-earmark-text' },
     ]);
 
+    const atuacaoInfoAll = useState(
+        [
+            {
+                id: 1,
+                title: 'Direito Trabalhista',
+                description: 'Assessoria completa em relações trabalhistas, contratos e direitos do trabalhador.',
+                icon: 'bi-briefcase-fill',
+                area: 'Direito Trabalhista'
+            },
+            {
+                id: 2,
+                title: 'Direito Civil',
+                description: 'Consultoria em contratos, responsabilidades, direitos de família e mais.',
+                icon: 'bi-file-earmark-text',
+                area: 'Direito Civil'
+            },
+            {
+                id: 3,
+                title: 'Direito Empresarial',
+                description: 'Orientação jurídica para empresas, sociedades e negociações comerciais.',
+                icon: 'bi-building',
+                area: 'Direito Empresarial'
+            },
+            {
+                id: 4,
+                title: 'Direito Penal',
+                description: 'Defesa e consultoria em casos criminais e processos penais.',
+                icon: 'bi-shield-lock',
+                area: 'Direito Penal',
+            }
+        ]
+    )
+
     // O valor que será compartilhado para os filhos
     const value = {
         contatos,
         redesSociais,
         areas,
-        menuItems
+        menuItems,
+        atuacaoInfoAll
     };
 
     return (

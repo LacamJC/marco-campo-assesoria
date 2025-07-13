@@ -1,0 +1,99 @@
+@import "../../assets/css/variables";
+@import "../../assets/css/typography";
+
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.textSection {
+    flex: 1 1 400px;
+    min-width: 280px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #030759; /* azul escuro */
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: $color-text-dark;
+    margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+    display: inline-block;
+    background-color: $color-primary-dark; /* azul escuro */
+    color: $color-contrast-light;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: $color-primary-darker;
+}
+
+.imageSection {
+    flex: 1 1 400px;
+    min-width: 280px;
+    text-align: center;
+}
+
+.image {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.backButton {
+    position: relative; // necessário para posicionar o ::after
+    background: transparent;
+    border: none;
+    color: $color-primary-dark;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    padding: 0;
+    font-size: 1.5rem;
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    &:hover {
+        transform: translateX(10px);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0; // posiciona a linha na base do botão
+        left: 0;
+        height: 2px; // altura da linha
+        width: 0; // começa com largura zero
+        background-color: $color-primary-dark;
+        transition: width 0.3s ease;
+    }
+
+    &:hover {
+        color: lighten($color-primary-dark, 10%);
+
+        &::after {
+            width: 100%; // cresce até a largura total do botão
+
+        }
+    }
+}
