@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer"
 import Hero from "../Hero/Hero"
 
 function Home() {
-    const height = '100px'
+    const height = '200px'
     return (
         <>
             <Hero />
