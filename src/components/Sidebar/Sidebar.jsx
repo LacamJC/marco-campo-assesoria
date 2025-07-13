@@ -4,12 +4,12 @@ import { useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
 import { HashLink } from 'react-router-hash-link';
 
-const menuItems = [
-  { id: 1, label: 'Home', href: '/#hero', icon: 'bi-house-door' },
-  { id: 2, label: 'Sobre', href: '/#sobre', icon: 'bi-info-circle' },
-  { id: 3, label: 'Atuação', href: '/#atuacao', icon: 'bi-diagram-3' },
-  { id: 4, label: 'Contato', href: '/#contato', icon: 'bi-envelope' },
-];
+// const menuItems = [
+//   { id: 1, label: 'Home', href: '/#hero', icon: 'bi-house-door' },
+//   { id: 2, label: 'Sobre', href: '/#sobre', icon: 'bi-info-circle' },
+//   { id: 3, label: 'Atuação', href: '/#atuacao', icon: 'bi-diagram-3' },
+//   { id: 4, label: 'Contato', href: '/#contato', icon: 'bi-envelope' },
+// ];
 
 const contactInfo = [
   { id: 1, icon: 'bi-telephone-fill', label: '(11) 99999-9999', href: 'tel:+5511999999999' },
@@ -17,7 +17,8 @@ const contactInfo = [
 ];
 
 function Sidebar({ isOpen, onClose }) {
-  const { redesSociais } = useContext(SiteInfoContext)
+  const { redesSociais, menuItems } = useContext(SiteInfoContext)
+
   return (
     <>
       {/* Overlay */}
@@ -29,8 +30,8 @@ function Sidebar({ isOpen, onClose }) {
       {/* Sidebar */}
       <nav className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <ul className="list-unstyled p-3">
-          {menuItems.map(({ id, label, href, icon }) => {
-            
+          {menuItems[0].map(({ id, label, href, icon }) => {
+
             return <li key={id}>
               <HashLink smooth to={href} onClick={onClose} className={styles['menu-link']}>
                 <i className={`bi ${icon} me-2`}></i> {label}

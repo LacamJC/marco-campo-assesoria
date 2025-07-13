@@ -83,11 +83,20 @@ export function SiteInfoProvider({ children }) {
     ]
     );
 
+    const menuItems = useState([
+        { id: 1, label: 'Home', href: '/#hero', icon: 'bi-house-door' },
+        { id: 2, label: 'Sobre', href: '/#sobre', icon: 'bi-info-circle' },
+        { id: 3, label: 'Atuação', href: '/#atuacao', icon: 'bi-diagram-3' },
+        { id: 4, label: 'Contato', href: '/#contato', icon: 'bi-envelope' },
+        { id: 5, label: 'Termos e Condições', href: '/termos', icon: 'bi-file-earmark-text' },
+    ]);
+
     // O valor que será compartilhado para os filhos
     const value = {
         contatos,
         redesSociais,
         areas,
+        menuItems
     };
 
     return (
