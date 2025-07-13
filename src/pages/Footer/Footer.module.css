@@ -4,18 +4,20 @@ body {
   overflow-x: hidden;
 }
 
-section, main {
+.control_section {
   scroll-margin-top: 100px; /* altura do header fixo */
-  margin-bottom: 100px;
+  min-height: 90vh;
+  margin-bottom: 4rem;
 }
 
 body {
   overflow-x: hidden;
 }
 
-section, main {
+.control_section {
   scroll-margin-top: 100px; /* altura do header fixo */
-  margin-bottom: 100px;
+  min-height: 90vh;
+  margin-bottom: 4rem;
 }
 
 .footer {

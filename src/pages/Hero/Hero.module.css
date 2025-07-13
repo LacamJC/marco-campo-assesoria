@@ -4,13 +4,10 @@ body {
   overflow-x: hidden;
 }
 
-section, main {
+.control_section {
   scroll-margin-top: 100px; /* altura do header fixo */
-  margin-bottom: 100px;
-}
-
-.hero {
-  min-height: 400px; /* ajuste conforme desejar */
+  min-height: 90vh;
+  margin-bottom: 4rem;
 }
 
 .title {

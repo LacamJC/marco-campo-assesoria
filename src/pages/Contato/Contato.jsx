@@ -47,7 +47,7 @@ function Contato() {
     };
 
     return (
-        <div className={styles.background_dividido} id='contato'>
+        <section className={`${styles.background_dividido} ${styles.control_section}`} id='contato'>
             <div className={styles.contentWrapper}>
                 <h2 className={styles.sectionTitle}>Entre em contato</h2>
 
@@ -70,7 +70,7 @@ function Contato() {
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
 
 
 

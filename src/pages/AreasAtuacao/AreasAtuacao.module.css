@@ -4,18 +4,45 @@ body {
   overflow-x: hidden;
 }
 
-section, main {
+.control_section {
   scroll-margin-top: 100px; /* altura do header fixo */
-  margin-bottom: 100px;
+  min-height: 90vh;
+  margin-bottom: 4rem;
 }
 
 body {
   overflow-x: hidden;
 }
 
-section, main {
+.control_section {
   scroll-margin-top: 100px; /* altura do header fixo */
-  margin-bottom: 100px;
+  min-height: 90vh;
+  margin-bottom: 4rem;
+}
+
+.atuacaoSection {
+  position: relative;
+  padding: 4rem 2rem;
+  min-height: 120vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.atuacaoSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://arquitetodebolso.com.br/wp-content/uploads/2024/03/71086_Depois-3-scaled.jpeg.webp") center center/cover no-repeat;
+  filter: blur(6px) brightness(0.4);
+  z-index: 0;
+  transform: scale(1.2);
+}
+
+.atuacaoSection > * {
+  position: relative;
+  z-index: 1;
 }
 
 .title {
@@ -25,13 +52,17 @@ section, main {
   color: #030759;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cardLink {
   text-decoration: none;
   color: inherit;
   display: block;
-  height: 100%; /* faz o link ocupar todo o card */
+  height: 100%;
 }
 
 .cardLink:hover .card {
@@ -40,7 +71,7 @@ section, main {
 }
 
 .card {
-  background-color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0.8980392157);
   padding: 1.5rem;
   border-radius: 12px;
   text-align: center;
@@ -57,4 +88,17 @@ section, main {
   color: #030759;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  font-weight: 700;
+  color: #040740;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.08);
 }/*# sourceMappingURL=AreasAtuacao.module.css.map */

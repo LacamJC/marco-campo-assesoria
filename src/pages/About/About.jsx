@@ -2,7 +2,7 @@ import styles from './About.module.css';
 
 function About() {
   return (
-    <main className={`container my-5 ${styles.about}`} id='sobre'>
+    <section className={`container  ${styles.about} ${styles.control_section}`} id='sobre'>
       <div className="row align-items-center">
         {/* Coluna esquerda - texto */}
         <div className="col-md-6">
@@ -27,7 +27,7 @@ function About() {
         </div>
 
         {/* Coluna direita - imagem placeholder */}
-        <div className="col-md-6 p-0">
+        <div className="col-md-6 p-0 d-flex justify-content-center align-items-start">
           <img
             src="https://placehold.co/600x400"
             alt="Sobre imagem"
@@ -35,7 +35,7 @@ function About() {
           />
         </div>
       </div>
-    </main>
+    </section>
   );
 }
 

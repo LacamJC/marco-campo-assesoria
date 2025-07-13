@@ -35,25 +35,28 @@ const areas = [
 
 function AreasAtuacao() {
     return (
-        <section className={`container my-5 ${styles.areas}`} id='atuacao'>
-            <h2 className={styles.title}>Nossas Áreas de Atuação</h2>
-            <div className="row">
-                {areas.map(({ id, title, description, icon }) => {
-                    const linkPath = `/atuacao/${slugify(title)}`;
-                    return (
-                        <div key={id} className="col-md-6 col-lg-3 mb-4">
-                            <Link to={linkPath} className={styles.cardLink}>
-                                <div className={styles.card}>
-                                    <i className={`bi ${icon} ${styles.icon}`}></i>
-                                    <h3 className={styles.cardTitle}>{title}</h3>
-                                    <p className={styles.cardDescription}>{description}</p>
-                                </div>
-                            </Link>
-                        </div>
-                    );
-                })}
+        <section className={`${styles.atuacaoSection} py-5 ${styles.control_section}`} id="atuacao">
+            <div className="container">
+                <h2 className={styles.title}>Nossas Áreas de Atuação</h2>
+                <div className="row">
+                    {areas.map(({ id, title, description, icon }) => {
+                        const linkPath = `/atuacao/${slugify(title)}`;
+                        return (
+                            <div key={id} className="col-md-6 col-lg-3 mb-4">
+                                <Link to={linkPath} className={styles.cardLink}>
+                                    <div className={styles.card}>
+                                        <i className={`bi ${icon} ${styles.icon}`}></i>
+                                        <h3 className={styles.cardTitle}>{title}</h3>
+                                        <p className={styles.cardDescription}>{description}</p>
+                                    </div>
+                                </Link>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </section>
+
     );
 }
 

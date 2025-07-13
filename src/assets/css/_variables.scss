@@ -1,3 +1,4 @@
+@import './globals';
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 // Fonte principal serifada
 $font-primary: "Merriweather", serif;
@@ -23,10 +24,3 @@ $spacing-small: 0.5rem;
 $spacing-medium: 1rem;
 $spacing-large: 2rem;
 
-body{
-    overflow-x: hidden;
-}
-section, main {
-    scroll-margin-top: 100px; /* altura do header fixo */
-    margin-bottom: 100px;
-}

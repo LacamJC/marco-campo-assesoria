@@ -9,15 +9,10 @@ function Home() {
     return (
         <>
             <Hero />
-            <div style={{ height: height }}></div>
             <About />
-            <div style={{ height: height }}></div>
             <AreasAtuacao />
-            <div style={{ height: height }}></div>
-            <Contato/>
-            <div style={{ height: height }}></div>
-            <Footer/>
-
+            <Contato />
+            <Footer />
         </>
     )
 }
