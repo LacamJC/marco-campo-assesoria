@@ -21,7 +21,7 @@
 @mixin subtitle-style {
   font-family: $font-secondary;
   font-size: $font-size-subtitle;
-  font-weight: $font-weight-semibold;
+  font-weight: 500;
   color: $color-primary-darker;
   margin-top: $spacing-large;
   margin-bottom: $spacing-small;

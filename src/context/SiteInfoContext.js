@@ -11,7 +11,7 @@ export function SiteInfoProvider({ children }) {
             {
                 id: 1,
                 label: 'Telefone',
-                value: '(11) 99999-9999',
+                value: '(11) 94628-9761',
                 href: 'tel:+5511999999999',
                 icon: 'bi-telephone-fill',
             },
