@@ -1,0 +1,104 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+.background_dividido {
+  width: 100%;
+  height: 120vh; /* altura total da viewport, ajusta conforme quiser */
+  background: linear-gradient(to right, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 50%), url("https://placehold.co/1200x1200") right center no-repeat; /* imagem à direita */
+  background-size: 50% 100%, 50% 100%; /* metade da largura para cada */
+  background-repeat: no-repeat;
+  background-position: left center, right center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* para responsividade: quebra linha em telas pequenas */
+}
+
+.card {
+  background-color: #f8f9fa;
+  width: 280px;
+  height: 300px;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.icon {
+  font-size: 4rem;
+  color: #030759;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #040740;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  padding: 0 0.5rem;
+  word-wrap: break-word;
+  min-height: 3.5rem; /* altura fixa para evitar desalinhamento */
+  display: -webkit-box; /* para truncar com ... se quiser, opcional */
+  -webkit-line-clamp: 2; /* limitar a 2 linhas, opcional */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.button {
+  background-color: #030759;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #02054d;
+}
+
+.button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.sectionTitle {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #030759;
+  text-align: center;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=Contato.module.css.map */
