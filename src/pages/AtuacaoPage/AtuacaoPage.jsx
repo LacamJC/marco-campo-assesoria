@@ -2,6 +2,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useContext } from 'react';
 import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './AtuacaoPage.module.css'; // CSS Module para estilo
+import { HashLink } from 'react-router-hash-link';
+import NotFoundMessage from '../../components/NotFoundMessage/NotFoundMessage';
 
 function AtuacaoPage() {
     const { id } = useParams(); // Captura o ID da URL
@@ -21,7 +23,7 @@ function AtuacaoPage() {
         return atuacaoInfoAll[0].find(element => element.id === Number(id));
     }
 
-    if (!item) return <p>Carregando...</p>;
+    if (!item) return <NotFoundMessage />;
 
     return (
         <main className={styles.container}>
@@ -32,9 +34,10 @@ function AtuacaoPage() {
                 <section className={styles.textSection}>
                     <h1 className={styles.title}><i className={item.icon} /> {item.title}</h1>
                     <p className={styles.description}>{item.description}</p>
-                    <a href="/contato" className={styles.ctaButton}>
-                        Entrar em Contato
-                    </a>
+
+                    <HashLink smooth to="/#contato" className={styles.ctaButton}>
+                        <i class="bi bi-telephone-fill"></i> Entrar em Contato
+                    </HashLink>
                 </section>
                 <section className={styles.imageSection}>
                     {/* Placeholder de imagem, pode substituir pela real depois */}
