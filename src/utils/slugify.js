@@ -9,8 +9,7 @@ export function slugify(text) {
      * Exemplo:
      * slugify('olá mundo') // retorna 'ola-mundo'
      */
-    if(typeof(text) != 'text')
-    {
+    if (typeof text !== 'string') {
         return text;
     }
     return text.toLowerCase().replace(/\s+/g, '-');

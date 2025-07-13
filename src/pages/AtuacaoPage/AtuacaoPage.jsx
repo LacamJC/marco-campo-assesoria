@@ -4,7 +4,7 @@ import { SiteInfoContext } from '../../context/SiteInfoContext';
 import styles from './AtuacaoPage.module.css'; // CSS Module para estilo
 import { HashLink } from 'react-router-hash-link';
 import NotFoundMessage from '../../components/NotFoundMessage/NotFoundMessage';
-
+import { slugify } from '../../utils/slugify';
 function AtuacaoPage() {
     const { id } = useParams(); // Captura o ID da URL
     const [item, setItem] = useState(null);
@@ -26,7 +26,7 @@ function AtuacaoPage() {
     if (!item) return <NotFoundMessage />;
 
     return (
-        <main className={styles.container}>
+        <section className={styles.container} id={item ? slugify(item.title) : '' }>
             <button className={styles.backButton} onClick={() => navigate(-1)}>
                 ← Voltar
             </button>
@@ -48,7 +48,7 @@ function AtuacaoPage() {
                     />
                 </section>
             </div>
-        </main>
+        </section>
     );
 }
 

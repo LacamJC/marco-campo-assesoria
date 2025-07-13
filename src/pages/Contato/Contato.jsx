@@ -148,7 +148,7 @@ export default function Contato() {
                     <label htmlFor="acceptTerms" className="form-check-label" >
                         <span>
                             Aceito os{' '}
-                            <Link to="/termos" target="_blank" rel="noopener noreferrer">
+                            <Link to="/termos" rel="noopener noreferrer">
                                 termos e condições de uso das informações
                             </Link>
                         </span>
