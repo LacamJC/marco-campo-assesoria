@@ -55,7 +55,9 @@
 
 /* Card individual de contato */
 .contactCard {
-  background-color: #f8f9fa;
+  // background-color: $color-primary-dark;
+  background-image: linear-gradient(to right, $color-primary-dark 60%, $color-primary-darker);
+  // color: white !important;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 1rem 1.5rem;
@@ -63,17 +65,18 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .contactCard:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateX(8px);
 }
 
 /* Ícone dentro do card */
 .icon {
   font-size: 2rem;
-  color: #030759;
+  color: $color-contrast-light;
   flex-shrink: 0;
   margin-top: 4px;
 }
@@ -88,14 +91,14 @@
 .contactLabel {
   font-weight: 600;
   font-size: 0.9rem;
-  color: #040740;
+  color: $color-contrast-light;
   margin-bottom: 0.25rem;
   font-family: $font-primary;
 }
 
 /* Link do contato */
 .contactLink {
-  color: #030759;
+  color: $color-contrast-light;
   font-weight: 400;
   text-decoration: none;
   word-break: break-word;
@@ -104,13 +107,13 @@
 }
 
 .contactLink:hover {
-  color: #040740;
+  color: lighten($color-contrast-light, 10%);
   text-decoration: underline;
 }
 
 /* Valor sem link */
 .contactValue {
-  color: #555;
+  color: darken($color-contrast-light, 10%);
   font-weight: 400;
   word-break: break-word;
   font-family: "Inter", sans-serif;
@@ -159,7 +162,7 @@ textarea:focus {
   font-weight: 700;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
-  color: #030759;
+  color: $color-primary-dark;
   font-family: $font-primary;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -199,7 +202,7 @@ textarea:focus {
 }
 
 .button:hover {
-  background-color: #02054d;
+  background-color: lighten($color-primary-dark, 10%);
 }
 
 /* Responsividade */
