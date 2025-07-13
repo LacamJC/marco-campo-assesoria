@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# MARCO CAMPOS | ASSESORIA JURÍDICA EMPRESARIAL
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este documento tem como objetivo, orientar e documentar o desenvolvimento de um site institucional para a empresa *Marco Campos Assesoria Jurídica Empresarial*.
 
-## Available Scripts
+Aqui será guardado informações sobre escolhas de arquitetura e informações sobre a identidade visual e objetivos da empresa.
 
-In the project directory, you can run:
+### PROPÓSITO DA APLICAÇÃO
+Este projeto tem como objetivo, ser a ponte entre o cliente em busca de serviços técnicos que se enquadrem nos perfils de profissionais que a empresa tem a disposição.
 
-### `npm start`
+Entre os serviços estão: consultoria jurídica, empresarial e etc...
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+###### PÚBLICO-ALVO
+Tem como público alvo, empresas de pequeno/médio porte que estão em buscas de auxílio com questões jurídicas, pessoas entre 20-50 anos em busca de serviços de alçada de advogados e profissionais da área.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### O QUE ESTE PROJETO AJUDA
+Assim como citado acima, o projeto tem o objetivo de ser um facilitador na comunicação entre os clientes e profissionais.
 
-### `npm test`
+###### COMO PODEMOS FAZER ISSO
+Atravês de informações de contato/serviços e uma implementação de um formulário de contato para facilitar esta ponte.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### REQUISITOS E OBJETIVOS
 
-### `npm run build`
+###### Requisitos funcionais
+- Apresentar seções claras: Hero, Sobre, Áreas de Atuação e Contato.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Menu lateral (sidebar) responsivo com navegação fácil.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Listagem das áreas de atuação com possibilidade de expansão futura para páginas detalhadas.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Formulário de contato via WhatsApp.
 
-### `npm run eject`
+###### Requisitos não funcionais
+- Design responsivo para diferentes dispositivos e resoluções.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Uso de tecnologias modernas: React, Bootstrap, CSS Modules.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Acessibilidade básica e boa experiência do usuário.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Performance adequada para carregamento rápido.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+>**Aviso:** as informações encontradas no site ainda não são oficiais, são apenas *placeholders* destino oficial.
 
-## Learn More
+#### IDENTIDADE VISUAL
+Optando por paleta de cores simples mas marcantes, a empresa optou pelas seguintes cores 
+- azul-escuro:  #030759;       // Azul escuro principal
+- azul-marinho: #040740;      // Azul marinho (mais escuro)
+- cinza-escuro: #333333;      // Cinza escuro para textos
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A estrutura do site segue uma base sólida de seções dividas por colunas de contéudo e imagens complementares.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
