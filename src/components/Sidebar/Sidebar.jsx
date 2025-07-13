@@ -3,7 +3,8 @@ import styles from './Sidebar.module.css';
 const menuItems = [
   { id: 1, label: 'Home', href: '#hero', icon: 'bi-house-door' },
   { id: 2, label: 'Sobre', href: '#sobre', icon: 'bi-info-circle' },
-  { id: 3, label: 'Contato', href: '#contato', icon: 'bi-envelope' },
+  { id: 3, label: 'Atuação', href: '#atuacao', icon: 'bi bi-back' },
+  { id: 4, label: 'Contato', href: '#contato', icon: 'bi-envelope' },
 ];
 
 function Sidebar({ isOpen, onClose }) {

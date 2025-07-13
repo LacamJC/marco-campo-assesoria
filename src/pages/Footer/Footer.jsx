@@ -22,7 +22,7 @@ function Footer() {
           <ul className={styles.list}>
             <li><a href="#home">Home</a></li>
             <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#atuacao">Atuação</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </div>

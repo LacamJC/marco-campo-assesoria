@@ -11,7 +11,10 @@ function Header() {
         <>
             <header className={`d-flex justify-content-between align-items-center p-3 ${styles.header}`}>
                 <div className="container d-flex justify-content-between align-items-center">
-                    <a href=""><img src={logo} alt="Logo" className={styles.logo} /></a>
+                    <a href="/" className={styles.brand}>
+                        <img src={logo} alt="Logo" className={styles.logo} />
+                        <span className={styles.brandName}>ASSESORIA JURÍDICA EMPRESARIAL</span>
+                    </a>
                     <button
                         className="btn"
                         type="button"

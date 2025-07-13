@@ -2,13 +2,30 @@
   background-color: #f8f9fa;
   border-bottom: 1px solid #dee2e6;
   height: 100px;
-  position: fixed;    /* fixa no topo */
+  position: fixed; /* fixa no topo */
   top: 0;
   left: 0;
-  width: 100%;        /* ocupa a largura total da viewport */
-  z-index: 1050;      /* fica acima de outros elementos */
+  width: 100%; /* ocupa a largura total da viewport */
+  z-index: 1050; /* fica acima de outros elementos */
 }
 .logo {
-    height: 70px; /* ou o tamanho que preferir */
-    cursor: pointer;
+  height: 70px;
+  margin-right: 0.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.brandName {
+  font-family: var(--font-primary, "Merriweather", serif);
+  font-size: .9rem;
+  font-weight: 700;
+  color: #030759; /* ou a cor principal do seu branding */
+
+  @media screen and (max-width: 420px){
+    display: none;
+  }
 }
