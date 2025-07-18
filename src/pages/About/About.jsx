@@ -1,5 +1,5 @@
 import styles from './About.module.css';
-import image from '../../assets/images/brainstrom.jpg'
+import image from '../../assets/images/escritorio.jpg'
 function About() {
   return (
     <section className={`container ${styles.about} ${styles.control_section}`} id="sobre">
