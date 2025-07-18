@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 body {
   overflow-x: hidden;
+  padding: 0;
 }
 
 .control_section {
@@ -12,6 +13,7 @@ body {
 
 body {
   overflow-x: hidden;
+  padding: 0;
 }
 
 .control_section {
@@ -101,4 +103,35 @@ body {
   font-size: 0.95rem;
   color: #333;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.button {
+  border: none;
+  margin-top: 20px;
+  background-color: none;
+  color: white;
+  max-width: 320px;
+  height: 50px;
+  border: 2px solid #030759;
+  background-color: #030759;
+  border-radius: 12px;
+  text-decoration: none !important;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease all;
+}
+.button:hover {
+  background-color: #f5f5f5;
+  color: #030759;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.button:focus {
+  outline: 2px solid #060fbc;
+  outline-offset: 2px;
 }/*# sourceMappingURL=AreasAtuacao.module.css.map */

@@ -24,6 +24,9 @@ function AreasAtuacao() {
                                         <i className={`bi ${icon} ${styles.icon}`}></i>
                                         <h3 className={styles.cardTitle}>{title}</h3>
                                         <p className={styles.cardDescription}>{description}</p>
+
+
+                                        <button className={`${styles.button}`}>Entenda Mais</button>
                                     </div>
                                 </HashLink>
                             </div>

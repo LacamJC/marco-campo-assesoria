@@ -1,36 +1,42 @@
 import styles from './About.module.css';
-
+import image from '../../assets/images/brainstrom.jpg'
 function About() {
   return (
-    <section className={`container  ${styles.about} ${styles.control_section}`} id='sobre'>
+    <section className={`container ${styles.about} ${styles.control_section}`} id="sobre">
       <div className="row align-items-center">
         {/* Coluna esquerda - texto */}
         <div className="col-md-6">
-          <h1 className={styles.title}>Sobre Nós</h1>
+          <h1 className={styles.title}>Sobre</h1>
           <p className={styles.paragraph}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis, urna at cursus cursus, urna lacus cursus lorem, sed sodales purus ipsum ut erat. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi nemo est sint atque. Maiores quas, repudiandae rerum molestiae velit accusantium, magnam expedita veniam ea reprehenderit ipsa officiis. Incidunt, quisquam soluta? Lorem, ipsum dolor sit amet
+            A M Campos Assessoria é especializada em consultoria jurídica empresarial, com foco em soluções estratégicas, preventivas e contenciosas. 
+            Atuamos para garantir a segurança jurídica e o crescimento sustentável de empresas de todos os portes.
+          </p>
+          <p className={styles.paragraph}>
+            Com uma abordagem personalizada, oferecemos atendimento digital ou presencial, sempre com transparência e excelência técnica.
           </p>
 
           <section className={styles.section}>
             <h2 className={styles.subtitle}>Nossa Missão</h2>
             <p className={styles.paragraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at dignissim nunc, id maximus ex. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis sapiente fugit velit molestiae vel? Nulla quos
+              Apoiar o desenvolvimento de empresas com soluções jurídicas eficazes, que previnam riscos, fortaleçam operações e promovam inovação com responsabilidade.
             </p>
           </section>
 
           <section className={styles.section}>
             <h2 className={styles.subtitle}>Nossa Equipe</h2>
             <p className={styles.paragraph}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum, mollitia consequatur? Quod dolore ab eligendi commodi quaerat
+              Contamos com advogados experientes e comprometidos com a entrega de resultados. Nossa equipe atua de forma consultiva e estratégica, sempre alinhada com as necessidades reais do seu negócio.
             </p>
           </section>
         </div>
 
-        {/* Coluna direita - imagem placeholder */}
+        {/* Coluna direita - imagem */}
         <div className="col-md-6 p-0 d-flex justify-content-center align-items-start">
           <img
-            src="https://placehold.co/600x400"
-            alt="Sobre imagem"
+            src={image}
+            width={'600px'}
+            height={'400px'}
+            alt="Equipe M Campos Assessoria"
             className={styles.image}
             loading="lazy"
           />
