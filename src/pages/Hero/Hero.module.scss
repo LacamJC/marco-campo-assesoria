@@ -1,9 +1,22 @@
 @import "../../assets/css/_variables.scss";
 
+
+.background{
+  background-color: $color-primary-dark;
+  background-image: linear-gradient(to right, $color-primary-dark, lighten($color-primary-dark, 10%));
+  color: $color-contrast-light !important;
+  margin-top: 100px;
+  // padding-top: 50px;
+  @media screen and (max-width: 720px){
+    padding-top: 20px;
+    // background-color: red;
+  }
+}
+
 .title {
   font-weight: 700;
   font-size: 2.5rem;
-  color: $color-primary-dark;
+  color: $color-contrast-light;
   font-family: $font-primary;
   margin-bottom: 1rem;
 }
@@ -12,13 +25,13 @@
   font-weight: 500;
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: $color-primary-darker;
+  color: $color-contrast-light;
   font-family: $font-secondary;
 }
 
 .paragraph {
   margin-bottom: 2rem;
-  color: $color-text-dark;
+  color: $color-contrast-light;
   font-size: $font-size-paragraph;
   font-family: $font-text;
   line-height: 1.5;
@@ -34,10 +47,11 @@
 
 .button {
   border: none;
-  background-color: $color-primary-dark;
+  background-color: none;
   color: white;
-  width: 220px;
+  max-width:320px;
   height: 50px;
+  border: 2px solid $color-contrast-light;
   border-radius: 12px;
   text-decoration: none !important;
   cursor: pointer; // muda o cursor para indicar clicável
@@ -52,8 +66,8 @@
   // padding: 0.75rem 1.8rem;
 
   &:hover {
-    background-color: lighten($color-primary-dark, 10%);
-
+    background-color: $color-contrast-light;
+    color: $color-primary-dark;
     transform: translateY(-4px);
     box-shadow:
       0 6px 12px rgba(0, 0, 0, 0.12),

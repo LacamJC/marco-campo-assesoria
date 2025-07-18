@@ -51,37 +51,7 @@ export function SiteInfoProvider({ children }) {
         ]
     )
 
-    const [areas] = useState([
-        {
-            id: 1,
-            title: 'Direito Trabalhista',
-            description: 'Assessoria completa em relações trabalhistas, contratos e direitos do trabalhador.',
-            icon: 'bi-briefcase-fill',
-            area: 'Direito Trabalhista'
-        },
-        {
-            id: 2,
-            title: 'Direito Civil',
-            description: 'Consultoria em contratos, responsabilidades, direitos de família e mais.',
-            icon: 'bi-file-earmark-text',
-            area: 'Direito Civil'
-        },
-        {
-            id: 3,
-            title: 'Direito Empresarial',
-            description: 'Orientação jurídica para empresas, sociedades e negociações comerciais.',
-            icon: 'bi-building',
-            area: 'Direito Empresarial'
-        },
-        {
-            id: 4,
-            title: 'Direito Penal',
-            description: 'Defesa e consultoria em casos criminais e processos penais.',
-            icon: 'bi-shield-lock',
-            area: 'Direito Penal',
-        }
-    ]
-    );
+
 
     const menuItems = useState([
         { id: 1, label: 'Home', href: '/#hero', icon: 'bi-house-door' },
@@ -91,38 +61,21 @@ export function SiteInfoProvider({ children }) {
         { id: 5, label: 'Termos e Condições', href: '/termos', icon: 'bi-file-earmark-text' },
     ]);
 
-    const atuacaoInfoAll = useState(
-        [
-            {
-                id: 1,
-                title: 'Direito Trabalhista',
-                description: 'Assessoria completa em relações trabalhistas, contratos e direitos do trabalhador.',
-                icon: 'bi-briefcase-fill',
-                area: 'Direito Trabalhista'
-            },
-            {
-                id: 2,
-                title: 'Direito Civil',
-                description: 'Consultoria em contratos, responsabilidades, direitos de família e mais.',
-                icon: 'bi-file-earmark-text',
-                area: 'Direito Civil'
-            },
-            {
-                id: 3,
-                title: 'Direito Empresarial',
-                description: 'Orientação jurídica para empresas, sociedades e negociações comerciais.',
-                icon: 'bi-building',
-                area: 'Direito Empresarial'
-            },
-            {
-                id: 4,
-                title: 'Direito Penal',
-                description: 'Defesa e consultoria em casos criminais e processos penais.',
-                icon: 'bi-shield-lock',
-                area: 'Direito Penal',
-            }
-        ]
-    )
+    const [areas] = useState([
+        { id: 1, title: 'Direito Trabalhista Empresarial', description: 'Gestão de riscos trabalhistas, revisão de contratos CLT e PJ, mediação e defesa em ações trabalhistas.', icon: 'bi-people-fill', area: 'Direito Trabalhista Empresarial' },
+        { id: 2, title: 'Direito Civil Empresarial', description: 'Consultoria em contratos, responsabilidade civil, direitos de família e resolução de conflitos empresariais.', icon: 'bi-file-earmark-text', area: 'Direito Civil Empresarial' },
+        { id: 3, title: 'Direito Empresarial', description: 'Orientação jurídica para abertura e encerramento de empresas, sociedades, planejamento societário e negociações comerciais.', icon: 'bi-building', area: 'Direito Empresarial' },
+        { id: 4, title: 'Direito Penal Empresarial', description: 'Defesa e consultoria em processos criminais ligados à atividade empresarial e proteção patrimonial.', icon: 'bi-shield-lock-fill', area: 'Direito Penal Empresarial' },
+    ]);
+
+    const atuacaoInfoAll = useState([
+        { id: 1, title: 'Consultoria Jurídica Empresarial', description: 'Consultoria preventiva e estratégica para organização, proteção e crescimento sustentável da sua empresa.', icon: 'bi-briefcase-fill', area: 'Direito Empresarial' },
+        { id: 2, title: 'Elaboração e Revisão de Contratos', description: 'Contratos de prestação de serviços, compra e venda, parcerias comerciais e demais contratos comerciais.', icon: 'bi-file-earmark-text', area: 'Direito Civil Empresarial' },
+        { id: 3, title: 'Planejamento Societário e Acordos de Sócios', description: 'Estruturação societária, alterações contratuais e prevenção de litígios internos.', icon: 'bi-diagram-3-fill', area: 'Direito Empresarial' },
+        { id: 4, title: 'Adequação à LGPD e Gestão de Provas', description: 'Assessoria em perícias técnicas, elaboração de pareceres, preservação e validação de evidências jurídicas.', icon: 'bi-shield-lock-fill', area: 'Direito Empresarial' },
+        { id: 5, title: 'Jurídico Trabalhista Preventivo', description: 'Gestão de riscos trabalhistas, revisão de contratos CLT e PJ, mediação e defesa em ações trabalhistas.', icon: 'bi-people-fill', area: 'Direito Trabalhista Empresarial' },
+        { id: 6, title: 'Expansão e Crescimento Seguro', description: 'Estratégias jurídicas para proteção patrimonial, abertura de novas filiais e estruturação sólida para expansão.', icon: 'bi-bar-chart-fill', area: 'Direito Empresarial' },
+    ]);
 
     // O valor que será compartilhado para os filhos
     const value = {

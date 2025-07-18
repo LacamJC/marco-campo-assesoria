@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 body {
   overflow-x: hidden;
+  padding: 0;
 }
 
 .control_section {
@@ -10,10 +11,22 @@ body {
   margin-bottom: 4rem;
 }
 
+.background {
+  background-color: #030759;
+  background-image: linear-gradient(to right, #030759, #050b8a);
+  color: #f5f5f5 !important;
+  margin-top: 100px;
+}
+@media screen and (max-width: 720px) {
+  .background {
+    padding-top: 20px;
+  }
+}
+
 .title {
   font-weight: 700;
   font-size: 2.5rem;
-  color: #030759;
+  color: #f5f5f5;
   font-family: "Merriweather", serif;
   margin-bottom: 1rem;
 }
@@ -22,13 +35,13 @@ body {
   font-weight: 500;
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #040740;
+  color: #f5f5f5;
   font-family: "Montserrat", "comic-sans";
 }
 
 .paragraph {
   margin-bottom: 2rem;
-  color: #333333;
+  color: #f5f5f5;
   font-size: 1rem;
   font-family: "Source Sans 3", cursive;
   line-height: 1.5;
@@ -45,10 +58,11 @@ body {
 
 .button {
   border: none;
-  background-color: #030759;
+  background-color: none;
   color: white;
-  width: 220px;
+  max-width: 320px;
   height: 50px;
+  border: 2px solid #f5f5f5;
   border-radius: 12px;
   text-decoration: none !important;
   cursor: pointer;
@@ -61,7 +75,8 @@ body {
   transition: 0.3s ease all;
 }
 .button:hover {
-  background-color: #050b8a;
+  background-color: #f5f5f5;
+  color: #030759;
   transform: translateY(-4px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.05);
 }
