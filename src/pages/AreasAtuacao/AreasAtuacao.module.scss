@@ -16,7 +16,8 @@
         content: "";
         position: absolute;
         inset: 0;
-        background: url("https://arquitetodebolso.com.br/wp-content/uploads/2024/03/71086_Depois-3-scaled.jpeg.webp") center center/cover no-repeat;
+        background: url("https://arquitetodebolso.com.br/wp-content/uploads/2024/03/71086_Depois-3-scaled.jpeg.webp")
+            center center/cover no-repeat;
         filter: blur(6px) brightness(0.4);
         z-index: 0;
         transform: scale(1.2);
@@ -37,7 +38,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.subtitle{
+.subtitle {
     @include subtitle-style;
     color: $color-contrast-light;
     text-align: center;
@@ -91,40 +92,39 @@
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.08);
 }
 
-
 .button {
-  border: none;
-  margin-top: 20px;
-  background-color: none;
-  color: white;
-  max-width:320px;
-  height: 50px;
-  border: 2px solid $color-primary-dark;
-  background-color:  $color-primary-dark;
-  border-radius: 12px;
-  text-decoration: none !important;
-  cursor: pointer; // muda o cursor para indicar clicável
-  font-weight: $font-weight-semibold; // usar peso médio (definido nas variáveis)
-  font-size: 1.2rem; // usar tamanho padrão de texto
-  transition: background-color 0.3s ease; // animação suave no hover
+    border: none;
+    margin-top: 20px;
+    background-color: none;
+    color: white;
+    width: 100%;
+    height: 50px;
+    border: 2px solid $color-primary-dark;
+    background-color: $color-primary-dark;
+    border-radius: 12px;
+    text-decoration: none !important;
+    cursor: pointer; // muda o cursor para indicar clicável
+    font-weight: $font-weight-semibold; // usar peso médio (definido nas variáveis)
+    font-size: 1.2rem; // usar tamanho padrão de texto
+    transition: background-color 0.3s ease; // animação suave no hover
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease all;
-  // padding: 0.75rem 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease all;
+    // padding: 0.75rem 1.8rem;
 
-  &:hover {
-    background-color: $color-contrast-light;
-    color: $color-primary-dark;
-    transform: translateY(-4px);
-    box-shadow:
-      0 6px 12px rgba(0, 0, 0, 0.12),
-      0 2px 4px rgba(0, 0, 0, 0.05); // sombra leve e um toque extra suave
-  }
+    &:hover {
+        background-color: $color-contrast-light;
+        color: $color-primary-dark;
+        transform: translateY(-4px);
+        box-shadow:
+            0 6px 12px rgba(0, 0, 0, 0.12),
+            0 2px 4px rgba(0, 0, 0, 0.05); // sombra leve e um toque extra suave
+    }
 
-  &:focus {
-    outline: 2px solid lighten($color-primary-dark, 20%);
-    outline-offset: 2px;
-  }
+    &:focus {
+        outline: 2px solid lighten($color-primary-dark, 20%);
+        outline-offset: 2px;
+    }
 }
