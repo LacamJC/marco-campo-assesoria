@@ -1,8 +1,9 @@
+@import "../../assets/css/variables";
 .header {
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #dee2e6;
+  background-color: darken($color-primary-dark, 10%);
+  // border-bottom: 1px solid #dee2e6;
   height: 100px;
-  position: fixed; /* fixa no topo */
+  // position: fixed; /* fixa no topo */
   top: 0;
   left: 0;
   width: 100%; /* ocupa a largura total da viewport */
@@ -21,11 +22,17 @@
 
 .brandName {
   font-family: var(--font-primary, "Merriweather", serif);
-  font-size: .9rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #030759; /* ou a cor principal do seu branding */
+  color: $color-gold; /* ou a cor principal do seu branding */
 
-  @media screen and (max-width: 420px){
+  @media screen and (max-width: 420px) {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1010px) {
+  .hidden {
     display: none;
   }
 }

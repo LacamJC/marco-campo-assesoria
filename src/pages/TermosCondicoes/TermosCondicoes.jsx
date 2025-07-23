@@ -51,7 +51,7 @@ function TermosCondicoes() {
         <section>
           <h2 className={styles.subtitle}>Propriedade Intelectual</h2>
           <p className={styles.paragraph}>
-            Todo o conteúdo deste site, incluindo textos, logotipos, códigos e layout, é de propriedade exclusiva do Escritório Marco Campo e protegido por direitos autorais.
+            Todo o conteúdo deste site, incluindo textos, logotipos, códigos e layout, é de propriedade exclusiva do Escritório Marco Campos e protegido por direitos autorais.
             É proibida a reprodução ou distribuição sem autorização prévia.
           </p>
         </section>
