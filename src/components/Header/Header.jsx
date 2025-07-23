@@ -26,7 +26,7 @@ function Header() {
                             aria-label="Menu"
                             onClick={toggleSidebar}
                         >
-                            <i className="bi bi-list" style={{ fontSize: '2.5rem', color: '#ebb266[' }}></i>
+                            <i className="bi bi-list" style={{ fontSize: '2.5rem', color: '#ebb266' }}></i>
                         </button>
                     </div>
                 </div>
