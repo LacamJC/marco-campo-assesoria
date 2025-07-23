@@ -122,7 +122,7 @@ body {
 
 /* Valor sem link */
 .contactValue {
-  color: gainsboro;
+  color: rgb(219.5, 219.5, 219.5);
   font-weight: 400;
   word-break: break-word;
   font-family: "Inter", sans-serif;
@@ -208,7 +208,7 @@ form label textarea:focus {
 }
 
 .button:hover {
-  background-color: #050b8a;
+  background-color: rgb(4.6630434783, 10.8804347826, 138.3369565217);
 }
 
 /* Responsividade */

@@ -107,7 +107,7 @@ body {
   transition: width 0.3s ease;
 }
 .backButton:hover {
-  color: #050b8a;
+  color: rgb(4.6630434783, 10.8804347826, 138.3369565217);
 }
 .backButton:hover::after {
   width: 100%;

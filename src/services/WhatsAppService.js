@@ -9,13 +9,14 @@ export function openChat(message, phone) {
     if (!phone) {
         return alert('Desculpe, não foi possivel abrir o chat ');
     }
-
+    console.log(phone)
     const onlyNumbers = /\d+/g; // pega um ou mais dígitos, globalmente
     var phone = phone.match(onlyNumbers).join('');
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    // window.open(url, '_blank');
-    alert(message);
+    // console.log(phone)
+    window.open(url, '_blank');
+    // alert(message);
 
 }
 
